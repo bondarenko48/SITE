@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ADVERONI — agencja cyfrowa dla małych i średnich firm. Strony internetowe, Google Business, SEO, Google Ads i wsparcie techniczne." />
+  <title>ADVERONI — Agencja Cyfrowa dla Twojego Biznesu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="adveroni.css" />
+</head>
+<body>
+
+  <!-- ░░ HEADER ░░ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">ADVERONI</a>
+
+      <nav class="nav" id="nav">
+        <a href="#services" class="nav__link" data-pl="Usługi"      data-ua="Послуги">Usługi</a>
+        <a href="#why"      class="nav__link" data-pl="O nas"       data-ua="Про нас">O nas</a>
+        <a href="#pricing"  class="nav__link" data-pl="Cennik"      data-ua="Ціни">Cennik</a>
+        <a href="#portfolio"class="nav__link" data-pl="Portfolio"   data-ua="Портфоліо">Portfolio</a>
+        <a href="#contact"  class="nav__link" data-pl="Kontakt"     data-ua="Контакт">Kontakt</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="pl">PL</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="ua">UA</button>
+        </div>
+        <a href="#contact" class="btn btn--primary header__cta"
+           data-pl="Bezpłatna konsultacja" data-ua="Безкоштовна консультація">
+          Bezpłatna konsultacja
+        </a>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ░░ HERO ░░ -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero__aurora" aria-hidden="true"></div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+      <div class="hero__sweep" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="hero__badge" data-pl="Agencja Cyfrowa — Polska" data-ua="Цифрове Агентство — Польща">
+            Agencja Cyfrowa — Polska
+          </div>
+          <h1 class="hero__title">
+            <span data-pl="Tworzymy strony internetowe," data-ua="Створюємо сайти,">Tworzymy strony internetowe,</span><br>
+            <span data-pl="które " data-ua="які ">które </span><em data-pl="zdobywają klientów" data-ua="залучають клієнтів">zdobywają klientów</em>
+          </h1>
+          <p class="hero__sub"
+             data-pl="Strony internetowe, Google Business, reklama i techniczne wsparcie dla Twojego biznesu."
+             data-ua="Сайти, Google Business, реклама та технічна підтримка для вашого бізнесу.">
+            Strony internetowe, Google Business, reklama i techniczne wsparcie dla Twojego biznesu.
+          </p>
+          <div class="hero__btns">
+            <a href="#contact" class="btn btn--primary btn--lg"
+               data-pl="Zamów konsultację" data-ua="Замовити консультацію">Zamów konsultację</a>
+            <a href="#services" class="btn btn--ghost btn--lg"
+               data-pl="Zobacz ofertę" data-ua="Переглянути пропозицію">Zobacz ofertę</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__num">150+</span>
+              <span class="stat__lbl" data-pl="Projektów" data-ua="Проектів">Projektów</span>
+            </div>
+            <div class="stat__div"></div>
+            <div class="stat">
+              <span class="stat__num">98%</span>
+              <span class="stat__lbl" data-pl="Zadowolonych klientów" data-ua="Задоволених клієнтів">Zadowolonych klientów</span>
+            </div>
+            <div class="stat__div"></div>
+            <div class="stat">
+              <span class="stat__num">5 lat</span>
+              <span class="stat__lbl" data-pl="Doświadczenia" data-ua="Досвіду">Doświadczenia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="mockup">
+            <div class="mockup__browser">
+              <div class="mockup__bar">
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <div class="mockup__url">adveroni.pl</div>
+              </div>
+              <div class="mockup__screen">
+                <div class="ms-nav"></div>
+                <div class="ms-hero">
+                  <div class="ms-line ms-line--xl"></div>
+                  <div class="ms-line ms-line--lg"></div>
+                  <div class="ms-line ms-line--md"></div>
+                  <div class="ms-btn"></div>
+                </div>
+                <div class="ms-cards">
+                  <div class="ms-card"></div>
+                  <div class="ms-card"></div>
+                  <div class="ms-card"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup__phone">
+              <div class="mockup__phone-notch"></div>
+              <div class="mockup__phone-screen">
+                <div class="ms-line ms-line--lg"></div>
+                <div class="ms-line ms-line--md"></div>
+                <div class="ms-btn ms-btn--sm"></div>
+                <div class="ms-card ms-card--phone"></div>
+                <div class="ms-card ms-card--phone"></div>
+              </div>
+            </div>
+            <div class="mockup__tag mockup__tag--1"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SEO Ready</div>
+            <div class="mockup__tag mockup__tag--2"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Fast Load</div>
+            <div class="mockup__tag mockup__tag--3"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg> Mobile First</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+    </section>
+
+    <!-- ░░ INDUSTRIES TICKER ░░ -->
+    <section class="ticker">
+      <div class="container">
+        <p class="ticker__label"
+           data-pl="Obsługujemy firmy z branż"
+           data-ua="Обслуговуємо компанії з галузей">Obsługujemy firmy z branż</p>
+        <div class="ticker__row">
+          <span class="chip">Salon Beauty</span>
+          <span class="chip">Barber Shop</span>
+          <span class="chip">Restauracja</span>
+          <span class="chip">Auto Serwis</span>
+          <span class="chip">Budownictwo</span>
+          <span class="chip">Logistyka</span>
+          <span class="chip">Nail Studio</span>
+          <span class="chip">Lokalny Biznes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ SERVICES ░░ -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Co oferujemy" data-ua="Що ми пропонуємо">Co oferujemy</span>
+          <h2 class="sec-title"
+              data-pl="Kompleksowe usługi cyfrowe dla Twojego biznesu"
+              data-ua="Комплексні цифрові послуги для вашого бізнесу">
+            Kompleksowe usługi cyfrowe<br>dla Twojego biznesu
+          </h2>
+          <p class="sec-sub"
+             data-pl="Wszystko czego potrzebujesz, żeby być widocznym online i zdobywać klientów."
+             data-ua="Все що потрібно, щоб бути помітним онлайн та залучати клієнтів.">
+            Wszystko czego potrzebujesz, żeby być widocznym online i zdobywać klientów.
+          </p>
+        </div>
+
+        <div class="services__grid">
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Strony internetowe" data-ua="Веб-сайти">Strony internetowe</h3>
+            <p class="svc-card__text"
+               data-pl="Profesjonalne strony dla firm. Szybkie, nowoczesne, SEO-friendly i zoptymalizowane pod konwersję."
+               data-ua="Професійні сайти для бізнесу. Швидкі, сучасні та оптимізовані для конверсії.">
+              Profesjonalne strony dla firm. Szybkie, nowoczesne, SEO-friendly i zoptymalizowane pod konwersję.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Landing Page" data-ua="Лендінг">Landing Page</h3>
+            <p class="svc-card__text"
+               data-pl="Strony sprzedażowe nastawione na jedno: pozyskanie klienta lub leada."
+               data-ua="Продажні сторінки, спрямовані на одне: залучення клієнта або ліда.">
+              Strony sprzedażowe nastawione na jedno: pozyskanie klienta lub leada.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Opieka techniczna" data-ua="Технічна підтримка">Opieka techniczna</h3>
+            <p class="svc-card__text"
+               data-pl="Aktualizacje, backup, bezpieczeństwo i zmiany treści. Ty prowadzisz biznes, my dbamy o stronę."
+               data-ua="Оновлення, резервні копії, безпека та зміни контенту. Ти ведеш бізнес — ми дбаємо про сайт.">
+              Aktualizacje, backup, bezpieczeństwo i zmiany treści. Ty prowadzisz biznes, my dbamy o stronę.
+            </p>
+          </div>
+          <div class="svc-card svc-card--accent reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Google Business Profile" data-ua="Google Business Profile">Google Business Profile</h3>
+            <p class="svc-card__text"
+               data-pl="Konfiguracja i optymalizacja profilu Google. Więcej wyświetleń, recenzji i klientów z Map."
+               data-ua="Налаштування та оптимізація профілю Google. Більше показів, відгуків та клієнтів з Карт.">
+              Konfiguracja i optymalizacja profilu Google. Więcej wyświetleń, recenzji i klientów z Map.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Google Ads" data-ua="Google Реклама">Google Ads</h3>
+            <p class="svc-card__text"
+               data-pl="Kampanie reklamowe nastawione na wyniki. Płacisz za klientów, którzy szukają Twojej usługi."
+               data-ua="Рекламні кампанії, орієнтовані на результати. Платиш за клієнтів, які шукають твою послугу.">
+              Kampanie reklamowe nastawione na wyniki. Płacisz za klientów, którzy szukają Twojej usługi.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            <h3 class="svc-card__title" data-pl="SEO" data-ua="SEO">SEO</h3>
+            <p class="svc-card__text"
+               data-pl="Optymalizacja treści, techniczna i lokalne SEO — Twoi klienci znajdą Cię w Google."
+               data-ua="Оптимізація контенту, технічна та локальне SEO — твої клієнти знайдуть тебе в Google.">
+              Optymalizacja treści, techniczna i lokalne SEO — Twoi klienci znajdą Cię w Google.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Branding" data-ua="Брендинг">Branding</h3>
+            <p class="svc-card__text"
+               data-pl="Logo i identyfikacja wizualna, które budują zaufanie i rozpoznawalność marki."
+               data-ua="Логотип та візуальна ідентичність, що будують довіру та впізнаваність бренду.">
+              Logo i identyfikacja wizualna, które budują zaufanie i rozpoznawalność marki.
+            </p>
+          </div>
+          <div class="svc-card reveal">
+            <div class="svc-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <h3 class="svc-card__title" data-pl="Marketing Support" data-ua="Маркетингова підтримка">Marketing Support</h3>
+            <p class="svc-card__text"
+               data-pl="Strategia, treści, social media i analityka dla lokalnych firm gotowych na wzrost."
+               data-ua="Стратегія, контент, соцмережі та аналітика для місцевого бізнесу, готового до зростання.">
+              Strategia, treści, social media i analityka dla lokalnych firm gotowych na wzrost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ WHY US ░░ -->
+    <section class="why" id="why">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Dlaczego my" data-ua="Чому ми">Dlaczego my</span>
+          <h2 class="sec-title"
+              data-pl="Budujemy zaufanie, nie tylko piękne strony"
+              data-ua="Будуємо довіру, а не просто красиві сайти">
+            Budujemy zaufanie,<br>nie tylko piękne strony
+          </h2>
+        </div>
+        <div class="why__grid">
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3 data-pl="Szybka realizacja" data-ua="Швидка реалізація">Szybka realizacja</h3><p data-pl="Strona gotowa w 7–14 dni roboczych. Bez zbędnego oczekiwania." data-ua="Сайт готовий за 7–14 робочих днів. Без зайвого очікування.">Strona gotowa w 7–14 dni roboczych. Bez zbędnego oczekiwania.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 data-pl="Wsparcie po wdrożeniu" data-ua="Підтримка після впровадження">Wsparcie po wdrożeniu</h3><p data-pl="Nie znikamy po oddaniu projektu. Jesteśmy tu dla Ciebie na dłuższą metę." data-ua="Ми не зникаємо після здачі проекту. Ми тут для тебе надовго.">Nie znikamy po oddaniu projektu. Jesteśmy tu dla Ciebie na dłuższą metę.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9l4-6z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><line x1="2" y1="9" x2="22" y2="9"/></svg></div><h3 data-pl="Nowoczesny design" data-ua="Сучасний дизайн">Nowoczesny design</h3><p data-pl="Tylko premium wygląd. Żadnych szablonów z 2010 roku. Twoja marka zasługuje na więcej." data-ua="Тільки преміум вигляд. Жодних шаблонів з 2010-х. Твій бренд заслуговує на більше.">Tylko premium wygląd. Żadnych szablonów z 2010 roku. Twoja marka zasługuje na więcej.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2"/></svg></div><h3 data-pl="Mobile-first" data-ua="Mobile-first">Mobile-first</h3><p data-pl="Ponad 70% klientów szuka usług przez telefon. Twoja strona musi wyglądać perfekcyjnie." data-ua="Понад 70% клієнтів шукають послуги через телефон. Твій сайт повинен виглядати ідеально.">Ponad 70% klientów szuka usług przez telefon. Twoja strona musi wyglądać perfekcyjnie.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h3 data-pl="SEO Ready" data-ua="SEO Ready">SEO Ready</h3><p data-pl="Każda strona zoptymalizowana pod wyszukiwarki od pierwszego dnia." data-ua="Кожен сайт оптимізований під пошукові системи з першого дня.">Każda strona zoptymalizowana pod wyszukiwarki od pierwszego dnia.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3 data-pl="Bezpieczeństwo" data-ua="Безпека">Bezpieczeństwo</h3><p data-pl="SSL, backup, monitoring bezpieczeństwa. Twoja strona zawsze chroniona i dostępna." data-ua="SSL, резервні копії, моніторинг безпеки. Твій сайт завжди захищений та доступний.">SSL, backup, monitoring bezpieczeństwa. Twoja strona zawsze chroniona i dostępna.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 data-pl="Transparentne ceny" data-ua="Прозорі ціни">Transparentne ceny</h3><p data-pl="Żadnych ukrytych kosztów. Wiesz za co płacisz przed podpisaniem umowy." data-ua="Жодних прихованих витрат. Ти знаєш за що платиш перед підписанням договору.">Żadnych ukrytych kosztów. Wiesz za co płacisz przed podpisaniem umowy.</p></div>
+          <div class="why-item reveal"><div class="why-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3 data-pl="Lokalny partner" data-ua="Локальний партнер">Lokalny partner</h3><p data-pl="Rozumiemy potrzeby lokalnych firm w Polsce. Obsługujemy po polsku i ukraińsku." data-ua="Розуміємо потреби місцевого бізнесу в Польщі. Обслуговуємо польською та українською.">Rozumiemy potrzeby lokalnych firm w Polsce. Obsługujemy po polsku i ukraińsku.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ PRICING ░░ -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Cennik" data-ua="Ціни">Cennik</span>
+          <h2 class="sec-title"
+              data-pl="Przejrzyste pakiety, bez niespodzianek"
+              data-ua="Прозорі пакети, без сюрпризів">
+            Przejrzyste pakiety,<br>bez niespodzianek
+          </h2>
+          <p class="sec-sub"
+             data-pl="Każdy pakiet zawiera gwarancję jakości i wsparcie po wdrożeniu."
+             data-ua="Кожен пакет містить гарантію якості та підтримку після впровадження.">
+            Każdy pakiet zawiera gwarancję jakości i wsparcie po wdrożeniu.
+          </p>
+        </div>
+
+        <div class="pricing__grid">
+          <div class="price-card reveal">
+            <div class="price-card__head">
+              <span class="price-card__name" data-pl="START" data-ua="START">START</span>
+              <div class="price-card__price"><span class="price-card__amt">1 499</span><span class="price-card__cur">zł</span></div>
+              <p class="price-card__desc" data-pl="Idealne dla nowych firm i freelancerów" data-ua="Ідеально для нових компаній та фрілансерів">Idealne dla nowych firm i freelancerów</p>
+            </div>
+            <ul class="price-card__list">
+              <li data-pl="Strona do 5 podstron"      data-ua="Сайт до 5 підсторінок">Strona do 5 podstron</li>
+              <li data-pl="Design mobilny"             data-ua="Мобільний дизайн">Design mobilny</li>
+              <li data-pl="Formularz kontaktowy"       data-ua="Контактна форма">Formularz kontaktowy</li>
+              <li data-pl="SEO podstawowe"             data-ua="Базове SEO">SEO podstawowe</li>
+              <li data-pl="SSL + hosting 1 rok"        data-ua="SSL + хостинг 1 рік">SSL + hosting 1 rok</li>
+              <li data-pl="Realizacja: 7–10 dni"       data-ua="Реалізація: 7–10 днів">Realizacja: 7–10 dni</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-pl="Zamów teraz" data-ua="Замовити зараз">Zamów teraz</a>
+          </div>
+
+          <div class="price-card price-card--feat reveal">
+            <div class="price-card__badge" data-pl="Najpopularniejszy" data-ua="Найпопулярніший">Najpopularniejszy</div>
+            <div class="price-card__head">
+              <span class="price-card__name" data-pl="BUSINESS" data-ua="BUSINESS">BUSINESS</span>
+              <div class="price-card__price"><span class="price-card__amt">2 999</span><span class="price-card__cur">zł</span></div>
+              <p class="price-card__desc" data-pl="Dla rozwijających się firm lokalnych" data-ua="Для місцевих компаній, що розвиваються">Dla rozwijających się firm lokalnych</p>
+            </div>
+            <ul class="price-card__list">
+              <li data-pl="Strona do 10 podstron"      data-ua="Сайт до 10 підсторінок">Strona do 10 podstron</li>
+              <li data-pl="Premium design + animacje"   data-ua="Преміум дизайн + анімації">Premium design + animacje</li>
+              <li data-pl="Google Business Setup"       data-ua="Налаштування Google Business">Google Business Setup</li>
+              <li data-pl="SEO On-Page"                 data-ua="SEO On-Page">SEO On-Page</li>
+              <li data-pl="Blog / Aktualności"          data-ua="Блог / Новини">Blog / Aktualności</li>
+              <li data-pl="Integracja social media"     data-ua="Інтеграція соцмереж">Integracja social media</li>
+              <li data-pl="Google Analytics"            data-ua="Google Analytics">Google Analytics</li>
+              <li data-pl="Realizacja: 10–14 dni"       data-ua="Реалізація: 10–14 днів">Realizacja: 10–14 dni</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full" data-pl="Zamów teraz" data-ua="Замовити зараз">Zamów teraz</a>
+          </div>
+
+          <div class="price-card reveal">
+            <div class="price-card__head">
+              <span class="price-card__name" data-pl="PREMIUM" data-ua="PREMIUM">PREMIUM</span>
+              <div class="price-card__price"><span class="price-card__amt">5 499</span><span class="price-card__cur">zł</span></div>
+              <p class="price-card__desc" data-pl="Kompleksowe rozwiązanie dla ambitnych firm" data-ua="Комплексне рішення для амбітних компаній">Kompleksowe rozwiązanie dla ambitnych firm</p>
+            </div>
+            <ul class="price-card__list">
+              <li data-pl="Nieograniczona liczba podstron" data-ua="Необмежена кількість підсторінок">Nieograniczona liczba podstron</li>
+              <li data-pl="Custom design premium"          data-ua="Кастомний преміум дизайн">Custom design premium</li>
+              <li data-pl="Branding + logo"                data-ua="Брендинг + логотип">Branding + logo</li>
+              <li data-pl="Google Business + Google Ads"   data-ua="Google Business + Google Реклама">Google Business + Google Ads</li>
+              <li data-pl="SEO zaawansowane"               data-ua="Розширене SEO">SEO zaawansowane</li>
+              <li data-pl="CMS panel administracyjny"      data-ua="Адмін-панель CMS">CMS panel administracyjny</li>
+              <li data-pl="2 miesiące opieki GRATIS"       data-ua="2 місяці підтримки БЕЗКОШТОВНО">2 miesiące opieki GRATIS</li>
+              <li data-pl="Realizacja: 14–21 dni"          data-ua="Реалізація: 14–21 день">Realizacja: 14–21 dni</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-pl="Zamów teraz" data-ua="Замовити зараз">Zamów teraz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ MONTHLY SUPPORT ░░ -->
+    <section class="support" id="support">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Opieka miesięczna" data-ua="Щомісячна підтримка">Opieka miesięczna</span>
+          <h2 class="sec-title"
+              data-pl="Twoja strona zawsze bezpieczna i aktualna"
+              data-ua="Твій сайт завжди в безпеці та актуальний">
+            Twoja strona zawsze<br>bezpieczna i aktualna
+          </h2>
+          <p class="sec-sub"
+             data-pl="Subskrypcja opieki technicznej. Spokój ducha za stałą miesięczną opłatę."
+             data-ua="Підписка технічної підтримки. Спокій за фіксовану щомісячну плату.">
+            Subskrypcja opieki technicznej. Spokój ducha za stałą miesięczną opłatę.
+          </p>
+        </div>
+        <div class="support__grid">
+          <div class="sup-card reveal">
+            <div class="sup-card__name" data-pl="BASIC" data-ua="BASIC">BASIC</div>
+            <div class="sup-card__price"><span class="sup-card__amt">149</span><span class="sup-card__per" data-pl="zł / mies." data-ua="зл / міс.">zł / mies.</span></div>
+            <ul class="sup-card__list">
+              <li data-pl="Aktualizacje systemu" data-ua="Оновлення системи">Aktualizacje systemu</li>
+              <li data-pl="Backup tygodniowy" data-ua="Щотижневий бекап">Backup tygodniowy</li>
+              <li data-pl="Monitoring dostępności" data-ua="Моніторинг доступності">Monitoring dostępności</li>
+              <li data-pl="1 zmiana treści / mies." data-ua="1 зміна контенту / міс.">1 zmiana treści / mies.</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-pl="Wybierz" data-ua="Обрати">Wybierz</a>
+          </div>
+          <div class="sup-card sup-card--feat reveal">
+            <div class="sup-card__name" data-pl="STANDARD" data-ua="STANDARD">STANDARD</div>
+            <div class="sup-card__price"><span class="sup-card__amt">299</span><span class="sup-card__per" data-pl="zł / mies." data-ua="зл / міс.">zł / mies.</span></div>
+            <ul class="sup-card__list">
+              <li data-pl="Wszystko z BASIC" data-ua="Все з BASIC">Wszystko z BASIC</li>
+              <li data-pl="Backup dzienny" data-ua="Щоденний бекап">Backup dzienny</li>
+              <li data-pl="Monitoring bezpieczeństwa" data-ua="Моніторинг безпеки">Monitoring bezpieczeństwa</li>
+              <li data-pl="3 zmiany treści / mies." data-ua="3 зміни контенту / міс.">3 zmiany treści / mies.</li>
+              <li data-pl="Raport miesięczny" data-ua="Щомісячний звіт">Raport miesięczny</li>
+            </ul>
+            <a href="#contact" class="btn btn--primary btn--full" data-pl="Wybierz" data-ua="Обрати">Wybierz</a>
+          </div>
+          <div class="sup-card reveal">
+            <div class="sup-card__name" data-pl="PRO" data-ua="PRO">PRO</div>
+            <div class="sup-card__price"><span class="sup-card__amt">599</span><span class="sup-card__per" data-pl="zł / mies." data-ua="зл / міс.">zł / mies.</span></div>
+            <ul class="sup-card__list">
+              <li data-pl="Wszystko ze STANDARD" data-ua="Все зі STANDARD">Wszystko ze STANDARD</li>
+              <li data-pl="Priorytetowe wsparcie 24/7" data-ua="Пріоритетна підтримка 24/7">Priorytetowe wsparcie 24/7</li>
+              <li data-pl="Nieograniczone zmiany treści" data-ua="Необмежені зміни контенту">Nieograniczone zmiany treści</li>
+              <li data-pl="SEO optymalizacja / mies." data-ua="SEO оптимізація / міс.">SEO optymalizacja / mies.</li>
+              <li data-pl="Analityka i raporty" data-ua="Аналітика та звіти">Analityka i raporty</li>
+              <li data-pl="Dedykowany opiekun" data-ua="Виділений менеджер">Dedykowany opiekun</li>
+            </ul>
+            <a href="#contact" class="btn btn--outline btn--full" data-pl="Wybierz" data-ua="Обрати">Wybierz</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ GOOGLE BUSINESS ░░ -->
+    <section class="gbp" id="gbp">
+      <div class="container gbp__inner">
+        <div class="gbp__content reveal">
+          <span class="sec-tag" data-pl="Google Business Profile" data-ua="Google Business Profile">Google Business Profile</span>
+          <h2 class="sec-title"
+              data-pl="Bądź widoczny tam, gdzie klienci Cię szukają"
+              data-ua="Будь помітним там, де клієнти тебе шукають">
+            Bądź widoczny tam,<br>gdzie klienci Cię szukają
+          </h2>
+          <p class="sec-sub"
+             data-pl="Google Business Profile pozwala Twojej firmie pojawiać się w wynikach Google i Google Maps. Bezpłatne narzędzie o ogromnym wpływie na pozyskiwanie lokalnych klientów."
+             data-ua="Google Business Profile дозволяє твоїй компанії з'являтися в результатах Google та Google Maps. Безкоштовний інструмент із величезним впливом на залучення місцевих клієнтів.">
+            Google Business Profile pozwala Twojej firmie pojawiać się w wynikach Google i Google Maps. Bezpłatne narzędzie o ogromnym wpływie na pozyskiwanie lokalnych klientów.
+          </p>
+          <div class="gbp__list">
+            <div class="gbp-item">
+              <span class="gbp-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <div>
+                <strong data-pl="Widoczność lokalna" data-ua="Локальна видимість">Widoczność lokalna</strong>
+                <p data-pl="Pojawiaj się w wynikach lokalnych i na Google Maps." data-ua="З'являйся в локальних результатах та на Google Maps.">Pojawiaj się w wynikach lokalnych i na Google Maps.</p>
+              </div>
+            </div>
+            <div class="gbp-item">
+              <span class="gbp-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+              <div>
+                <strong data-pl="Recenzje i zaufanie" data-ua="Відгуки та довіра">Recenzje i zaufanie</strong>
+                <p data-pl="Zbieraj opinie klientów i buduj wiarygodność marki." data-ua="Збирай відгуки клієнтів та будуй авторитет бренду.">Zbieraj opinie klientów i buduj wiarygodność marki.</p>
+              </div>
+            </div>
+            <div class="gbp-item">
+              <span class="gbp-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.9a16 16 0 0 0 5.55 5.55l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div>
+                <strong data-pl="Bezpośredni kontakt" data-ua="Прямий контакт">Bezpośredni kontakt</strong>
+                <p data-pl="Klienci dzwonią lub zamawiają bezpośrednio z Google." data-ua="Клієнти телефонують або замовляють безпосередньо з Google.">Klienci dzwonią lub zamawiają bezpośrednio z Google.</p>
+              </div>
+            </div>
+            <div class="gbp-item">
+              <span class="gbp-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+              <div>
+                <strong data-pl="+70% zapytań lokalnych" data-ua="+70% місцевих запитів">+70% zapytań lokalnych</strong>
+                <p data-pl="Firmy z profilem Google dostają znacznie więcej kontaktów od lokalnych klientów." data-ua="Компанії з профілем Google отримують значно більше контактів від місцевих клієнтів.">Firmy z profilem Google dostają znacznie więcej kontaktów od lokalnych klientów.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn--primary" data-pl="Skonfiguruj swój profil" data-ua="Налаштуй свій профіль">Skonfiguruj swój profil</a>
+        </div>
+
+        <div class="gbp__visual reveal" aria-hidden="true">
+          <div class="gbp-mockup">
+            <div class="gbp-mockup__top">
+              <div class="gbp-mockup__g">G</div>
+              <div class="gbp-mockup__search"><span data-pl="salon beauty warszawa" data-ua="салон краси варшава">salon beauty warszawa</span></div>
+            </div>
+            <div class="gbp-mockup__card">
+              <div class="gbp-mockup__biz" data-pl="Twój Salon Beauty" data-ua="Твій Салон Краси">Twój Salon Beauty</div>
+              <div class="gbp-mockup__stars">★★★★★ <span>4.9 (127)</span></div>
+              <div class="gbp-mockup__meta">
+                <span>📍 ul. Przykładowa 1</span>
+                <span>📞 +48 000 000 000</span>
+                <span class="gbp-mockup__open" data-pl="● Otwarte teraz" data-ua="● Відчинено зараз">● Otwarte teraz</span>
+              </div>
+              <div class="gbp-mockup__actions">
+                <span data-pl="Zadzwoń" data-ua="Подзвонити">Zadzwoń</span>
+                <span data-pl="Trasa" data-ua="Маршрут">Trasa</span>
+                <span data-pl="Strona" data-ua="Сайт">Strona</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ PORTFOLIO ░░ -->
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Portfolio" data-ua="Портфоліо">Portfolio</span>
+          <h2 class="sec-title" data-pl="Nasze realizacje" data-ua="Наші реалізації">Nasze realizacje</h2>
+          <p class="sec-sub"
+             data-pl="Projekty, które przyniosły klientom realne wyniki biznesowe."
+             data-ua="Проекти, що принесли клієнтам реальні бізнес-результати.">
+            Projekty, które przyniosły klientom realne wyniki biznesowe.
+          </p>
+        </div>
+        <div class="portfolio__grid">
+          <div class="port-card reveal">
+            <div class="port-card__img port-card__img--1">
+              <span class="port-card__cat" data-pl="Salon Beauty" data-ua="Салон Краси">Salon Beauty</span>
+            </div>
+            <div class="port-card__body">
+              <h3>Bella Beauty Studio</h3>
+              <p data-pl="Strona + Google Business + SEO. Wzrost zapytań o 230% w 3 miesiące." data-ua="Сайт + Google Business + SEO. Зростання запитів на 230% за 3 місяці.">Strona + Google Business + SEO. Wzrost zapytań o 230% w 3 miesiące.</p>
+              <div class="port-card__tags"><span>Web</span><span>SEO</span><span>Google Business</span></div>
+            </div>
+          </div>
+          <div class="port-card reveal">
+            <div class="port-card__img port-card__img--2">
+              <span class="port-card__cat" data-pl="Auto Serwis" data-ua="Автосервіс">Auto Serwis</span>
+            </div>
+            <div class="port-card__body">
+              <h3>AutoPro Service</h3>
+              <p data-pl="Landing page + Google Ads. Koszt pozyskania klienta obniżony o 40%." data-ua="Лендінг + Google Реклама. Вартість залучення клієнта знижена на 40%.">Landing page + Google Ads. Koszt pozyskania klienta obniżony o 40%.</p>
+              <div class="port-card__tags"><span>Landing</span><span>Google Ads</span></div>
+            </div>
+          </div>
+          <div class="port-card reveal">
+            <div class="port-card__img port-card__img--3">
+              <span class="port-card__cat" data-pl="Restauracja" data-ua="Ресторан">Restauracja</span>
+            </div>
+            <div class="port-card__body">
+              <h3>Pizzeria Napoli</h3>
+              <p data-pl="Strona z menu + rezerwacje + branding. Top 3 Google lokalnie." data-ua="Сайт з меню + бронювання + брендинг. Топ 3 Google локально.">Strona z menu + rezerwacje + branding. Top 3 Google lokalnie.</p>
+              <div class="port-card__tags"><span>Web</span><span>Branding</span><span>SEO</span></div>
+            </div>
+          </div>
+          <div class="port-card reveal">
+            <div class="port-card__img port-card__img--4">
+              <span class="port-card__cat" data-pl="Budownictwo" data-ua="Будівництво">Budownictwo</span>
+            </div>
+            <div class="port-card__body">
+              <h3>BudMaster Sp. z o.o.</h3>
+              <p data-pl="Strona korporacyjna + SEO. 5× więcej zapytań ofertowych." data-ua="Корпоративний сайт + SEO. У 5 разів більше запитів на пропозиції.">Strona korporacyjna + SEO. 5× więcej zapytań ofertowych.</p>
+              <div class="port-card__tags"><span>Corporate</span><span>SEO</span><span>Google Business</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ REVIEWS ░░ -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Opinie" data-ua="Відгуки">Opinie</span>
+          <h2 class="sec-title" data-pl="Co mówią nasi klienci" data-ua="Що кажуть наші клієнти">Co mówią nasi klienci</h2>
+        </div>
+        <div class="reviews__grid">
+          <div class="rev-card reveal">
+            <div class="rev-card__stars">★★★★★</div>
+            <p class="rev-card__text" data-pl="„Profesjonalna obsługa i świetny efekt. Strona działa rewelacyjnie, klienci chwalą wygląd. Polecam ADVERONI każdemu lokalnemu biznesowi.""
+               data-ua="„Професійне обслуговування та чудовий результат. Сайт працює чудово, клієнти хвалять вигляд. Рекомендую ADVERONI кожному місцевому бізнесу."">
+              „Profesjonalna obsługa i świetny efekt. Strona działa rewelacyjnie, klienci chwalą wygląd. Polecam ADVERONI każdemu lokalnemu biznesowi."
+            </p>
+            <div class="rev-card__author">
+              <div class="rev-card__av">AK</div>
+              <div>
+                <strong>Anna Kowalska</strong>
+                <span data-pl="Właścicielka salonu beauty" data-ua="Власниця салону краси">Właścicielka salonu beauty</span>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card reveal">
+            <div class="rev-card__stars">★★★★★</div>
+            <p class="rev-card__text" data-pl="„W ciągu miesiąca od uruchomienia mam 3× więcej telefonów od nowych klientów. Inwestycja, która zwróciła się w kilka tygodni.""
+               data-ua="„Протягом місяця після запуску я отримую в 3 рази більше дзвінків. Інвестиція, яка окупилася за кілька тижнів."">
+              „W ciągu miesiąca od uruchomienia mam 3× więcej telefonów od nowych klientów. Inwestycja, która zwróciła się w kilka tygodni."
+            </p>
+            <div class="rev-card__author">
+              <div class="rev-card__av">MN</div>
+              <div>
+                <strong>Marek Nowak</strong>
+                <span data-pl="Właściciel auto serwisu" data-ua="Власник автосервісу">Właściciel auto serwisu</span>
+              </div>
+            </div>
+          </div>
+          <div class="rev-card reveal">
+            <div class="rev-card__stars">★★★★★</div>
+            <p class="rev-card__text" data-pl="„Terminowo, profesjonalnie i bez zbędnych pytań. Strona wygląda 10× lepiej niż poprzednia i to za rozsądną cenę.""
+               data-ua="„Вчасно, професійно і без зайвих питань. Сайт виглядає в 10 разів краще за попередній і за розумною ціною."">
+              „Terminowo, profesjonalnie i bez zbędnych pytań. Strona wygląda 10× lepiej niż poprzednia i to za rozsądną cenę."
+            </p>
+            <div class="rev-card__author">
+              <div class="rev-card__av">PW</div>
+              <div>
+                <strong>Piotr Wiśniewski</strong>
+                <span data-pl="Właściciel firmy budowlanej" data-ua="Власник будівельної компанії">Właściciel firmy budowlanej</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ FAQ ░░ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">FAQ</span>
+          <h2 class="sec-title" data-pl="Najczęstsze pytania" data-ua="Найчастіші питання">Najczęstsze pytania</h2>
+        </div>
+        <div class="faq__list">
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Ile kosztuje strona internetowa?" data-ua="Скільки коштує веб-сайт?">Ile kosztuje strona internetowa?</button>
+            <div class="faq-item__a"><p data-pl="Ceny zaczynają się od 1 499 zł (pakiet START). Dokładna wycena zależy od zakresu projektu i funkcjonalności. Bezpłatna wycena zawsze dostępna." data-ua="Ціни починаються від 1 499 зл (пакет START). Точна ціна залежить від обсягу проекту та функціоналу. Безкоштовна оцінка завжди доступна.">Ceny zaczynają się od 1 499 zł (pakiet START). Dokładna wycena zależy od zakresu projektu i funkcjonalności. Bezpłatna wycena zawsze dostępna.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Jak długo trwa realizacja?" data-ua="Скільки часу займає реалізація?">Jak długo trwa realizacja?</button>
+            <div class="faq-item__a"><p data-pl="Standardowo 7–14 dni roboczych. Pakiet PREMIUM do 21 dni. Termin ustalamy indywidualnie na początku współpracy." data-ua="Стандартно 7–14 робочих днів. Пакет PREMIUM до 21 дня. Термін обговорюємо індивідуально на початку співпраці.">Standardowo 7–14 dni roboczych. Pakiet PREMIUM do 21 dni. Termin ustalamy indywidualnie na początku współpracy.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Czy będę mógł samodzielnie edytować stronę?" data-ua="Чи зможу я самостійно редагувати сайт?">Czy będę mógł samodzielnie edytować stronę?</button>
+            <div class="faq-item__a"><p data-pl="Tak. Pakiety BUSINESS i PREMIUM zawierają CMS z intuicyjnym panelem administracyjnym. Prowadzimy również krótkie szkolenie dla Ciebie lub Twojego zespołu." data-ua="Так. Пакети BUSINESS та PREMIUM містять CMS з інтуїтивною адмін-панеллю. Ми також проводимо коротке навчання для тебе або твоєї команди.">Tak. Pakiety BUSINESS i PREMIUM zawierają CMS z intuicyjnym panelem administracyjnym. Prowadzimy również krótkie szkolenie dla Ciebie lub Twojego zespołu.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Co to jest opieka techniczna?" data-ua="Що таке технічна підтримка?">Co to jest opieka techniczna?</button>
+            <div class="faq-item__a"><p data-pl="To miesięczna subskrypcja: dbamy o aktualizacje, backup, bezpieczeństwo, monitoring i zmiany treści. Ty prowadzisz biznes — my pilnujemy strony." data-ua="Це щомісячна підписка: ми дбаємо про оновлення, резервні копії, безпеку, моніторинг та зміни контенту. Ти ведеш бізнес — ми стежимо за сайтом.">To miesięczna subskrypcja: dbamy o aktualizacje, backup, bezpieczeństwo, monitoring i zmiany treści. Ty prowadzisz biznes — my pilnujemy strony.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Czy robicie strony po ukraińsku?" data-ua="Чи робите ви сайти українською?">Czy robicie strony po ukraińsku?</button>
+            <div class="faq-item__a"><p data-pl="Tak. Tworzymy strony wielojęzyczne: po polsku, ukraińsku i angielsku. Obsługujemy klientów zarówno po polsku jak i po ukraińsku." data-ua="Так. Ми створюємо багатомовні сайти: польською, українською та англійською. Обслуговуємо клієнтів польською та українською.">Tak. Tworzymy strony wielojęzyczne: po polsku, ukraińsku i angielsku. Obsługujemy klientów zarówno po polsku jak i po ukraińsku.</p></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" data-pl="Czy oferujecie płatność w ratach?" data-ua="Чи пропонуєте ви оплату частинами?">Czy oferujecie płatność w ratach?</button>
+            <div class="faq-item__a"><p data-pl="Tak. Standardowo: 50% zaliczka przed startem, 50% po oddaniu gotowej strony." data-ua="Так. Стандартно: 50% завдаток перед початком, 50% після здачі готового сайту.">Tak. Standardowo: 50% zaliczka przed startem, 50% po oddaniu gotowej strony.</p></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ░░ CONTACT ░░ -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag" data-pl="Kontakt" data-ua="Контакт">Kontakt</span>
+          <h2 class="sec-title" data-pl="Zacznijmy razem Twój projekt" data-ua="Почнімо разом твій проект">Zacznijmy razem Twój projekt</h2>
+          <p class="sec-sub"
+             data-pl="Bezpłatna konsultacja. Bez zobowiązań. Odpowiadamy w ciągu 24 godzin."
+             data-ua="Безкоштовна консультація. Без зобов'язань. Відповідаємо протягом 24 годин.">
+            Bezpłatna konsultacja. Bez zobowiązań. Odpowiadamy w ciągu 24 godzin.
+          </p>
+        </div>
+
+        <div class="contact__inner">
+          <div class="contact__info">
+            <div class="c-item">
+              <span class="c-item__ico"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+              <div>
+                <span class="c-item__lbl" data-pl="Email" data-ua="Email">Email</span>
+                <a href="mailto:hello@adveroni.pl" class="c-item__val">hello@adveroni.pl</a>
+              </div>
+            </div>
+            <div class="c-item">
+              <span class="c-item__ico"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 10.9a16 16 0 0 0 5.55 5.55l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <div>
+                <span class="c-item__lbl" data-pl="Telefon" data-ua="Телефон">Telefon</span>
+                <a href="tel:+48000000000" class="c-item__val">+48 000 000 000</a>
+              </div>
+            </div>
+            <div class="c-item">
+              <span class="c-item__ico"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+              <div>
+                <span class="c-item__lbl">WhatsApp</span>
+                <a href="https://wa.me/48000000000" class="c-item__val" data-pl="Napisz na WhatsApp" data-ua="Написати у WhatsApp">Napisz na WhatsApp</a>
+              </div>
+            </div>
+            <a href="https://wa.me/48000000000" class="btn btn--wa" data-pl="Napisz na WhatsApp" data-ua="Написати у WhatsApp">
+              Napisz na WhatsApp
+            </a>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-lbl" data-pl="Imię i nazwisko" data-ua="Ім'я та прізвище">Imię i nazwisko</label>
+                <input type="text" class="form-inp" placeholder="Jan Kowalski" required />
+              </div>
+              <div class="form-group">
+                <label class="form-lbl" data-pl="Telefon / Email" data-ua="Телефон / Email">Telefon / Email</label>
+                <input type="text" class="form-inp" placeholder="+48 000 000 000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-lbl" data-pl="Rodzaj biznesu" data-ua="Тип бізнесу">Rodzaj biznesu</label>
+              <input type="text" class="form-inp"
+                     data-pl-ph="Salon beauty / Restauracja / Auto serwis..."
+                     data-ua-ph="Салон краси / Ресторан / Автосервіс..."
+                     placeholder="Salon beauty / Restauracja / Auto serwis..." />
+            </div>
+            <div class="form-group">
+              <label class="form-lbl" data-pl="Czego potrzebujesz?" data-ua="Що тобі потрібно?">Czego potrzebujesz?</label>
+              <textarea class="form-inp form-ta" rows="4"
+                        data-pl-ph="Opisz swój projekt lub zadaj pytanie..."
+                        data-ua-ph="Опиши свій проект або постав питання..."
+                        placeholder="Opisz swój projekt lub zadaj pytanie..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full" data-pl="Wyślij zapytanie" data-ua="Надіслати запит">
+              Wyślij zapytanie
+            </button>
+            <p class="form-success" id="formSuccess" hidden
+               data-pl="✓ Wiadomość wysłana! Odezwiemy się wkrótce."
+               data-ua="✓ Повідомлення надіслано! Зв'яжемося незабаром.">
+              ✓ Wiadomość wysłana! Odezwiemy się wkrótce.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo logo--light">ADVERONI</a>
+        <p data-pl="Agencja cyfrowa dla małych i średnich firm w Polsce." data-ua="Цифрове агентство для малого та середнього бізнесу в Польщі.">Agencja cyfrowa dla małych i średnich firm w Polsce.</p>
+      </div>
+      <div class="footer__col">
+        <h4 data-pl="Usługi" data-ua="Послуги">Usługi</h4>
+        <a href="#services" data-pl="Strony internetowe" data-ua="Веб-сайти">Strony internetowe</a>
+        <a href="#services" data-pl="Landing Page" data-ua="Лендінг">Landing Page</a>
+        <a href="#gbp"      data-pl="Google Business" data-ua="Google Business">Google Business</a>
+        <a href="#services" data-pl="Google Ads" data-ua="Google Реклама">Google Ads</a>
+        <a href="#services" data-pl="SEO" data-ua="SEO">SEO</a>
+        <a href="#services" data-pl="Branding" data-ua="Брендинг">Branding</a>
+      </div>
+      <div class="footer__col">
+        <h4 data-pl="Firma" data-ua="Компанія">Firma</h4>
+        <a href="#why"      data-pl="O nas" data-ua="Про нас">O nas</a>
+        <a href="#portfolio"data-pl="Portfolio" data-ua="Портфоліо">Portfolio</a>
+        <a href="#pricing"  data-pl="Cennik" data-ua="Ціни">Cennik</a>
+        <a href="#support"  data-pl="Opieka techniczna" data-ua="Технічна підтримка">Opieka techniczna</a>
+        <a href="#faq"      data-pl="FAQ" data-ua="FAQ">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4 data-pl="Kontakt" data-ua="Контакт">Kontakt</h4>
+        <a href="mailto:hello@adveroni.pl">hello@adveroni.pl</a>
+        <a href="tel:+48000000000">+48 000 000 000</a>
+        <a href="https://wa.me/48000000000">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p data-pl="© 2024 ADVERONI. Wszelkie prawa zastrzeżone." data-ua="© 2024 ADVERONI. Всі права захищені.">© 2024 ADVERONI. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="adveroni.js"></script>
+</body>
+</html>
