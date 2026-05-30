@@ -32,7 +32,7 @@
   burger.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-expanded', String(open));
   });
 
   // Close on nav link click
@@ -59,13 +59,22 @@
   function applyLang(lang) {
     currentLang = lang;
 
+    // Update <html lang> for screen readers and search engines
+    document.documentElement.lang = lang === 'ua' ? 'uk' : 'pl';
+
     // Update button states
     langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
 
     // Update all elements with data-pl / data-ua
+    // Use innerHTML for elements whose attributes may contain HTML tags (links etc.)
     $$('[data-pl]').forEach(el => {
       const text = el.getAttribute(`data-${lang}`);
-      if (text !== null) el.textContent = text;
+      if (text === null) return;
+      if (text.includes('<')) {
+        el.innerHTML = text;
+      } else {
+        el.textContent = text;
+      }
     });
 
     // Update placeholders
@@ -101,10 +110,16 @@
       const isOpen = item.classList.contains('open');
 
       // Close all
-      $$('.faq-item.open').forEach(i => i.classList.remove('open'));
+      $$('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+      });
 
       // Toggle clicked
-      if (!isOpen) item.classList.add('open');
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
 
@@ -142,18 +157,23 @@
   });
 
   /* ══════════════════════════════════════
-     CONTACT FORM — basic feedback
+     CONTACT FORM — real submission via Formspree
+     CONFIGURE: Sign up at formspree.io, create a form and replace CONFIGURE_ME
+     with your form ID (also update the form action attribute in index.html)
      ══════════════════════════════════════ */
-  const form    = $('#contactForm');
-  const success = $('#formSuccess');
+  const form = $('#contactForm');
+  const FORM_ENDPOINT = form ? form.getAttribute('action') : '';
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
 
+      const success = $('#formSuccess');
+      const errorEl = $('#formError');
+
+      // Validate required fields
       const inputs = $$('.form-inp', form);
       let valid = true;
-
       inputs.forEach(inp => {
         inp.style.borderColor = '';
         if (inp.required && !inp.value.trim()) {
@@ -162,22 +182,63 @@
         }
       });
 
+      // Validate consent checkbox
+      const consent = $('#form-consent');
+      if (consent && !consent.checked) {
+        consent.closest('.form-consent').style.outline = '1.5px solid #EF4444';
+        valid = false;
+      } else if (consent) {
+        consent.closest('.form-consent').style.outline = '';
+      }
+
       if (!valid) return;
 
-      // Simulate sending
       const btn = $('button[type="submit"]', form);
       const origText = btn.textContent;
       btn.disabled = true;
       btn.textContent = currentLang === 'ua' ? 'Надсилаємо...' : 'Wysyłamy...';
+      if (success) success.hidden = true;
+      if (errorEl) errorEl.hidden = true;
 
-      setTimeout(() => {
-        form.reset();
+      if (!FORM_ENDPOINT || FORM_ENDPOINT.includes('CONFIGURE_ME')) {
+        console.warn('ADVERONI: Form endpoint not configured. Set your Formspree ID in index.html form action.');
         btn.disabled = false;
         btn.textContent = origText;
-        success.hidden = false;
-        success.textContent = success.getAttribute(`data-${currentLang}`) || success.getAttribute('data-pl');
-        setTimeout(() => { success.hidden = true; }, 5000);
-      }, 1200);
+        if (errorEl) {
+          errorEl.hidden = false;
+          errorEl.textContent = errorEl.getAttribute(`data-${currentLang}`) || errorEl.getAttribute('data-pl');
+        }
+        return;
+      }
+
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          window.location.href = 'thank-you.html';
+          if (success) {
+            success.hidden = false;
+            success.textContent = success.getAttribute(`data-${currentLang}`) || success.getAttribute('data-pl');
+            setTimeout(() => { success.hidden = true; }, 6000);
+          }
+        } else {
+          throw new Error('Server error ' + res.status);
+        }
+      } catch (_) {
+        if (errorEl) {
+          errorEl.hidden = false;
+          errorEl.textContent = errorEl.getAttribute(`data-${currentLang}`) || errorEl.getAttribute('data-pl');
+          setTimeout(() => { errorEl.hidden = true; }, 6000);
+        }
+      } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
     });
   }
 
@@ -208,6 +269,38 @@
 
   const statsEl = $('.hero__stats');
   if (statsEl) heroObs.observe(statsEl);
+
+  /* ══════════════════════════════════════
+     COOKIE CONSENT BANNER
+     ══════════════════════════════════════ */
+  const cookieBanner = $('#cookieBanner');
+  const cookieAccept = $('#cookieAccept');
+  const cookieReject = $('#cookieReject');
+
+  function hideCookie() {
+    if (cookieBanner) cookieBanner.classList.add('hidden');
+  }
+
+  try {
+    const saved = localStorage.getItem('adv-cookie');
+    if (!saved && cookieBanner) {
+      setTimeout(() => cookieBanner.classList.remove('hidden'), 1200);
+    }
+  } catch (_) {}
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      try { localStorage.setItem('adv-cookie', 'accepted'); } catch (_) {}
+      hideCookie();
+      if (window.dataLayer) window.dataLayer.push({ event: 'cookie_consent_accepted' });
+    });
+  }
+  if (cookieReject) {
+    cookieReject.addEventListener('click', () => {
+      try { localStorage.setItem('adv-cookie', 'rejected'); } catch (_) {}
+      hideCookie();
+    });
+  }
 
   /* ══════════════════════════════════════
      HERO CANVAS — ambient particles
@@ -257,5 +350,23 @@
       });
     })();
   }
+
+  /* ══════════════════════════════════════
+     SCROLL SPY — active nav link
+     ══════════════════════════════════════ */
+  const sections = $$('section[id]');
+  const navLinks = $$('.nav__link[href^="#"]');
+
+  const spyObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = navLinks.find(l => l.getAttribute('href') === '#' + entry.target.id);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => spyObs.observe(s));
 
 })();

@@ -450,7 +450,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   margin-bottom: 40px;
   max-width: 480px;
 }
-.hero__btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+.hero__btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 12px; }
+.hero__price-hint {
+  font-size: .82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+}
 .hero__stats {
   display: flex;
   align-items: center;
@@ -1459,6 +1465,319 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 
 /* ══════════════════════════════════════
+   COOKIE CONSENT BANNER
+   ══════════════════════════════════════ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 2000;
+  background: rgba(10,18,40,.97);
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 16px 0;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform .35s var(--ease), opacity .35s var(--ease);
+  box-shadow: 0 -8px 32px rgba(0,0,0,.5);
+}
+.cookie-banner.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+.cookie-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cookie-banner__text { flex: 1; min-width: 220px; }
+.cookie-banner__text strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.cookie-banner__text p {
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.cookie-banner__text a { color: var(--accent); text-decoration: underline; }
+.cookie-banner__actions { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-banner__actions .btn { padding: 10px 22px; font-size: .82rem; }
+
+/* ══════════════════════════════════════
+   MOBILE CTA BAR
+   ══════════════════════════════════════ */
+.mobile-cta { display: none; }
+
+@media (max-width: 768px) {
+  /* Cookie banner sits above mobile CTA */
+  .cookie-banner { bottom: 70px; }
+
+  .mobile-cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1400;
+    background: rgba(10,18,40,.97);
+    border-top: 1px solid rgba(255,255,255,.08);
+    padding: 10px 12px;
+    gap: 10px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 -4px 24px rgba(0,0,0,.5);
+  }
+  .mobile-cta__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 10px;
+    border-radius: 10px;
+    font-family: var(--font-head);
+    font-size: .875rem;
+    font-weight: 600;
+    transition: opacity .15s;
+    white-space: nowrap;
+  }
+  .mobile-cta__btn:active { opacity: .75; }
+  .mobile-cta__btn svg { flex-shrink: 0; }
+  .mobile-cta__btn--call {
+    background: linear-gradient(135deg, #2563EB, #1e40af);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(37,99,235,.35);
+  }
+  .mobile-cta__btn--wa {
+    background: linear-gradient(135deg, #25D366, #1ebe5d);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(37,211,102,.3);
+  }
+  /* Prevent contact section button from hiding behind mobile CTA */
+  .footer__bottom { padding-bottom: calc(24px + 70px); }
+}
+
+/* ══════════════════════════════════════
+   FORM CONSENT CHECKBOX
+   ══════════════════════════════════════ */
+.form-consent { margin-top: -4px; }
+.form-consent__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.form-consent__label input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  margin-top: 2px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.form-consent__label span {
+  font-size: .8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.form-consent__label span a { color: var(--accent); text-decoration: underline; }
+
+/* Form error message */
+.form-error {
+  text-align: center;
+  font-family: var(--font-head);
+  font-size: .9rem;
+  font-weight: 600;
+  color: #EF4444;
+  padding: 14px;
+  background: rgba(239,68,68,.07);
+  border-radius: 10px;
+  border: 1px solid rgba(239,68,68,.2);
+}
+
+/* ══════════════════════════════════════
+   NAV — scroll spy active state
+   ══════════════════════════════════════ */
+.nav__link.active {
+  color: var(--accent);
+}
+.nav__link.active::after {
+  transform: scaleX(1);
+}
+
+/* ══════════════════════════════════════
+   CONTACT STEPS — 3-step process
+   ══════════════════════════════════════ */
+.contact__steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.cstep {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+.cstep__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-head);
+  font-size: .8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.cstep__txt {
+  font-family: var(--font-head);
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.cstep__arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+  opacity: .6;
+}
+@media (max-width: 600px) {
+  .cstep__arrow { display: none; }
+  .contact__steps { gap: 8px; }
+  .cstep { padding: 10px 16px; }
+}
+
+/* ══════════════════════════════════════
+   FORM MICRO-COPY
+   ══════════════════════════════════════ */
+.form-micro {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--text-dim);
+  margin-top: 8px;
+  letter-spacing: .01em;
+}
+
+/* ══════════════════════════════════════
+   SKIP LINK — accessibility
+   ══════════════════════════════════════ */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 9999;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .875rem;
+  padding: 10px 18px;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top .15s;
+}
+.skip-link:focus { top: 0; }
+
+/* ══════════════════════════════════════
+   SERVICE CARD — CTA link
+   ══════════════════════════════════════ */
+.svc-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  font-family: var(--font-head);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap .2s, opacity .2s;
+}
+.svc-card__link:hover { gap: 8px; opacity: .8; }
+
+/* ══════════════════════════════════════
+   SECTION CTA NOTE — pricing / support
+   ══════════════════════════════════════ */
+.section-cta-note {
+  text-align: center;
+  font-size: .9rem;
+  color: var(--text-muted);
+  margin-top: 32px;
+}
+.section-cta-note a { color: var(--accent); text-decoration: underline; }
+
+/* ══════════════════════════════════════
+   AVAILABILITY BADGE — scarcity signal
+   ══════════════════════════════════════ */
+.availability-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,229,255,.07);
+  border: 1px solid rgba(0,229,255,.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 16px;
+  font-family: var(--font-head);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.availability-badge__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(.75); }
+}
+
+/* ══════════════════════════════════════
+   FOOTER SOCIAL LINKS
+   ══════════════════════════════════════ */
+.footer__social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--text-muted);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.footer__social-link:hover {
+  background: rgba(0,229,255,.1);
+  border-color: rgba(0,229,255,.3);
+  color: var(--accent);
+}
+.footer__legal {
+  font-size: .75rem;
+  color: var(--text-dim);
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════
    REDUCED MOTION
    ══════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
@@ -1472,4 +1791,145 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .mockup__tag { animation: none !important; }
   .mockup { filter: none !important; }
   .mockup__tag--2 { transform: translateY(-50%) !important; }
+}
+
+/* ══════════════════════════════════════
+   HERO PHONE CTA
+   ══════════════════════════════════════ */
+.hero__phone-cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+.hero__phone-cta-txt {
+  font-size: .82rem;
+  color: var(--text-dim);
+}
+.hero__phone-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-head);
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -.01em;
+  transition: opacity .2s, color .2s;
+}
+.hero__phone-link:hover { opacity: .8; }
+.hero__phone-link svg { flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   CONTACT TRUST STRIP
+   ══════════════════════════════════════ */
+.contact-trust {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+.trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 100px;
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: border-color .2s, color .2s;
+}
+.trust-item svg { color: var(--accent); flex-shrink: 0; }
+.trust-item:hover { border-color: rgba(0,229,255,.2); color: var(--text); }
+
+/* ══════════════════════════════════════
+   PRICING URGENCY NOTE
+   ══════════════════════════════════════ */
+.urgency-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,158,11,.06);
+  border: 1px solid rgba(245,158,11,.2);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-family: var(--font-head);
+  font-size: .78rem;
+  font-weight: 600;
+  color: #F59E0B;
+  margin-bottom: 18px;
+}
+.urgency-note__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #F59E0B;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════
+   GOOGLE REVIEWS BADGE
+   ══════════════════════════════════════ */
+.google-reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-top: 18px;
+}
+.grb__g {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  color: var(--white);
+  font-family: var(--font-head);
+  font-size: .95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.grb__stars {
+  font-size: .85rem;
+  color: #F59E0B;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.grb__text {
+  font-family: var(--font-head);
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+/* ══════════════════════════════════════
+   MOBILE CTA — phone number label
+   ══════════════════════════════════════ */
+.mobile-cta__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+.mobile-cta__number {
+  font-size: .72rem;
+  font-weight: 500;
+  opacity: .8;
+  letter-spacing: .01em;
+}
+
+@media (max-width: 480px) {
+  .hero__phone-cta { gap: 8px; }
+  .contact-trust { gap: 8px; }
+  .trust-item { font-size: .75rem; padding: 6px 12px; }
 }
