@@ -2629,3 +2629,612 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   white-space: nowrap;
   background: #eff6ff;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   PREMIUM AGENCY REDESIGN — Light alternating sections
+   ══════════════════════════════════════════════════════════════ */
+
+/* Page base — white so light sections look clean */
+body { background: #fff; }
+
+/* Reduced spacing globally */
+.sec-head { margin-bottom: 48px; }
+
+.services, .why, .pricing, .support,
+.gbp, .portfolio, .reviews, .faq, .contact {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* Hero — reduce height 25% */
+.hero { padding: calc(var(--header-h) + 60px) 0 80px; }
+
+/* ── Ticker ── */
+.ticker {
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.ticker__label { color: #94a3b8; }
+.chip { background: #fff; border-color: #e2e8f0; color: #374151; }
+.chip:hover { border-color: #bfdbfe; color: #2563eb; background: #eff6ff; box-shadow: none; }
+
+/* ══════════════════════════════════════
+   SERVICES — white
+   ══════════════════════════════════════ */
+.services { background: #ffffff; }
+.services .sec-tag  { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.services .sec-title { color: #0f172a; }
+.services .sec-sub   { color: #64748b; }
+
+.svc-card {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.03);
+}
+.svc-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 30px rgba(37,99,235,.1), 0 2px 6px rgba(0,0,0,.04);
+  background: #fff;
+  transform: translateY(-5px);
+}
+.svc-card::after { display: none; }
+.svc-card--accent { background: #f0f7ff; border-color: #bfdbfe; }
+.svc-card--accent:hover { background: #e8f1ff; border-color: #93c5fd; }
+.svc-card__icon { background: rgba(37,99,235,.08); border-color: rgba(37,99,235,.14); color: #2563eb; }
+.svc-card:hover .svc-card__icon { background: rgba(37,99,235,.13); box-shadow: 0 0 16px rgba(37,99,235,.18); }
+.svc-card__title { color: #0f172a; }
+.svc-card__text  { color: #64748b; }
+.svc-card__link  {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: .875rem;
+  font-weight: 600;
+  color: #2563eb;
+  font-family: var(--font-head);
+  transition: color .2s;
+}
+.svc-card__link:hover { color: #1d4ed8; }
+
+/* ══════════════════════════════════════
+   WHY US — light gray
+   ══════════════════════════════════════ */
+.why { background: #f7f9fc; }
+.why .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.why .sec-title { color: #0f172a; }
+
+.why-item {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 1px 6px rgba(0,0,0,.05);
+}
+.why-item:hover {
+  background: #ffffff;
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 24px rgba(37,99,235,.08);
+  transform: translateY(-4px);
+}
+.why-item__icon { background: rgba(37,99,235,.08); border-color: rgba(37,99,235,.14); color: #2563eb; }
+.why-item:hover .why-item__icon { box-shadow: 0 0 14px rgba(37,99,235,.18); }
+.why-item h3 { color: #0f172a; }
+.why-item p  { color: #64748b; }
+
+/* ══════════════════════════════════════
+   PRICING — white
+   ══════════════════════════════════════ */
+.pricing { background: #ffffff; }
+.pricing .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.pricing .sec-title { color: #0f172a; }
+.pricing .sec-sub   { color: #64748b; }
+
+.price-card {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.price-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 32px rgba(37,99,235,.1);
+}
+.price-card--feat {
+  background: linear-gradient(145deg, #eff6ff 0%, #ffffff 65%);
+  border-color: #93c5fd;
+  box-shadow: 0 8px 40px rgba(37,99,235,.15);
+}
+.price-card--feat:hover { box-shadow: 0 12px 48px rgba(37,99,235,.2); }
+.price-card__name { color: #2563eb; }
+.price-card--feat .price-card__name { color: #1d4ed8; }
+.price-card__amt  { color: #0f172a; }
+.price-card__cur  { color: #64748b; }
+.price-card__desc { color: #64748b; }
+.price-card__list li { color: #374151; }
+.price-card__list li::before { color: #2563eb; }
+.price-card--feat .price-card__list li { color: #1e293b; }
+.price-card--feat .price-card__list li::before { color: #1d4ed8; }
+
+.urgency-note {
+  background: rgba(37,99,235,.07);
+  border-color: rgba(37,99,235,.2);
+}
+.urgency-note span:last-child { color: #2563eb; }
+.urgency-note__dot { background: #2563eb; box-shadow: 0 0 8px rgba(37,99,235,.4); }
+
+.section-cta-note { color: #64748b; }
+.section-cta-note a { color: #2563eb; }
+
+.pricing .btn--outline,
+.support .btn--outline {
+  border-color: #e2e8f0;
+  color: #374151;
+  background: #fff;
+  backdrop-filter: none;
+}
+.pricing .btn--outline:hover,
+.support .btn--outline:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  box-shadow: none;
+}
+
+/* ══════════════════════════════════════
+   MONTHLY SUPPORT — light gray
+   ══════════════════════════════════════ */
+.support { background: #f7f9fc; }
+.support .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.support .sec-title { color: #0f172a; }
+.support .sec-sub   { color: #64748b; }
+
+.sup-card {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.sup-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 28px rgba(37,99,235,.1);
+}
+.sup-card--feat {
+  background: linear-gradient(145deg, #eff6ff 0%, #ffffff 65%);
+  border-color: #93c5fd;
+  box-shadow: 0 4px 20px rgba(37,99,235,.12);
+}
+.sup-card__name { color: #2563eb; }
+.sup-card--feat .sup-card__name { color: #1d4ed8; }
+.sup-card__amt  { color: #0f172a; }
+.sup-card__per  { color: #64748b; }
+.sup-card__list li { color: #374151; }
+.sup-card__list li::before { color: #2563eb; }
+.sup-card--feat .sup-card__list li::before { color: #1d4ed8; }
+
+/* ══════════════════════════════════════
+   GOOGLE BUSINESS — dark accent section
+   ══════════════════════════════════════ */
+.gbp { background: linear-gradient(135deg, #0c1527 0%, #1a3056 100%); }
+.gbp .sec-tag   { background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.16); color: rgba(255,255,255,.85); }
+.gbp .sec-title, .gbp__content .sec-title { color: #ffffff; text-align: left; }
+.gbp .sec-sub,   .gbp__content .sec-sub   { color: rgba(255,255,255,.62); text-align: left; }
+.gbp-item__icon { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.12); color: #93c5fd; }
+.gbp-item strong { color: #fff; }
+.gbp-item p      { color: rgba(255,255,255,.62); }
+
+/* GBP Mockup — realistic white card */
+.gbp-mockup {
+  background: #fff;
+  border: none;
+  box-shadow: 0 24px 64px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06);
+}
+.gbp-mockup__top    { background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+.gbp-mockup__g      { background: conic-gradient(#4285F4 0deg 120deg,#34A853 120deg 210deg,#FBBC05 210deg 270deg,#EA4335 270deg 360deg); box-shadow: none; }
+.gbp-mockup__search { background: #fff; border: 1px solid #e2e8f0; color: #374151; }
+.gbp-mockup__card   { background: #fff; }
+.gbp-mockup__biz    { color: #0f172a; }
+.gbp-mockup__stars span { color: #64748b; }
+.gbp-mockup__meta        { color: #64748b; }
+.gbp-mockup__open        { color: #16a34a; }
+.gbp-mockup__actions span { border-color: #dbeafe; color: #2563eb; background: #eff6ff; }
+.gbp-mockup__actions span:hover { background: #dbeafe; border-color: #93c5fd; }
+
+/* ══════════════════════════════════════
+   PORTFOLIO — white
+   ══════════════════════════════════════ */
+.portfolio { background: #ffffff; }
+.portfolio .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.portfolio .sec-title { color: #0f172a; }
+.portfolio .sec-sub   { color: #64748b; }
+
+.port-card {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+.port-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 40px rgba(37,99,235,.1);
+  transform: translateY(-4px);
+}
+.port-card__body h3 { color: #0f172a; }
+.port-card__body p  { color: #64748b; }
+.port-card__tags span {
+  background: rgba(37,99,235,.07);
+  color: #2563eb;
+  border-color: rgba(37,99,235,.12);
+}
+
+/* Portfolio card img area — mini website mockups */
+.port-card__img {
+  height: 220px;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding: 0;
+}
+.port-card__img::before { display: none; }
+.port-card__cat {
+  position: absolute;
+  bottom: 12px; left: 12px; right: auto;
+  z-index: 10;
+  background: rgba(255,255,255,.95);
+  color: #0f172a;
+  border: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+
+/* ── Mini browser mockup (portfolio) ── */
+.pmock {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.pmock__bar {
+  height: 26px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+.pmock__dot { width: 7px; height: 7px; border-radius: 50%; }
+.pmock__dot:nth-child(1) { background: #FF5F57; }
+.pmock__dot:nth-child(2) { background: #FFBD2E; }
+.pmock__dot:nth-child(3) { background: #28C840; }
+.pmock__url {
+  flex: 1;
+  background: rgba(255,255,255,.1);
+  border-radius: 3px;
+  height: 14px;
+  margin-left: 6px;
+  font-size: 6.5px;
+  color: rgba(255,255,255,.45);
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  font-family: var(--font-head);
+  overflow: hidden;
+  white-space: nowrap;
+}
+.pmock__content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.pmock__nav {
+  height: 24px;
+  background: #fff;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.pmock__nav-logo { width: 30px; height: 10px; border-radius: 3px; }
+.pmock__nav-links { flex: 1; display: flex; gap: 6px; justify-content: center; }
+.pmock__nav-link { height: 6px; width: 22px; background: #e2e8f0; border-radius: 2px; }
+.pmock__nav-cta  { height: 12px; width: 32px; border-radius: 3px; }
+.pmock__hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 10px;
+}
+.pmock__hero-text { flex: 1; }
+.pmock__h1 { height: 10px; width: 88%; border-radius: 3px; margin-bottom: 5px; }
+.pmock__h2 { height: 10px; width: 65%; border-radius: 3px; margin-bottom: 8px; }
+.pmock__p  { height: 5px;  width: 82%; border-radius: 2px; margin-bottom: 3px; }
+.pmock__p2 { height: 5px;  width: 58%; border-radius: 2px; margin-bottom: 8px; }
+.pmock__btn { height: 14px; width: 58px; border-radius: 4px; }
+.pmock__hero-img { width: 66px; height: 66px; border-radius: 8px; flex-shrink: 0; }
+.pmock__strip {
+  display: flex;
+  gap: 4px;
+  padding: 6px 10px;
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+.pmock__chip { flex: 1; height: 20px; border-radius: 5px; background: #fff; border: 1px solid #e2e8f0; }
+
+/* Card 1 — Bella Beauty (pink/rose) */
+.pmock__content--beauty { background: #fff; }
+.pmock__content--beauty .pmock__nav-logo { background: #fbcfe8; }
+.pmock__content--beauty .pmock__nav-cta  { background: #ec4899; }
+.pmock__content--beauty .pmock__hero     { background: linear-gradient(135deg,#fce7f3,#fdf2f8 60%,#fff); }
+.pmock__content--beauty .pmock__h1       { background: #0f172a; }
+.pmock__content--beauty .pmock__h2       { background: #1e293b; }
+.pmock__content--beauty .pmock__p,
+.pmock__content--beauty .pmock__p2       { background: #cbd5e1; }
+.pmock__content--beauty .pmock__btn      { background: #ec4899; }
+.pmock__content--beauty .pmock__hero-img { background: linear-gradient(135deg,#f9a8d4,#ec4899); }
+
+/* Card 2 — AutoPro (navy/orange) */
+.pmock__content--auto .pmock__nav         { background: #0f1e38; border-bottom-color: rgba(255,255,255,.07); }
+.pmock__content--auto .pmock__nav-logo    { background: #f97316; }
+.pmock__content--auto .pmock__nav-link    { background: rgba(255,255,255,.12); }
+.pmock__content--auto .pmock__nav-cta     { background: #f97316; }
+.pmock__content--auto .pmock__hero        { background: linear-gradient(135deg,#0f1e38,#1e3a5f); }
+.pmock__content--auto .pmock__h1          { background: #fff; }
+.pmock__content--auto .pmock__h2          { background: rgba(255,255,255,.7); }
+.pmock__content--auto .pmock__p,
+.pmock__content--auto .pmock__p2          { background: rgba(255,255,255,.3); }
+.pmock__content--auto .pmock__btn         { background: #f97316; }
+.pmock__content--auto .pmock__hero-img    { background: linear-gradient(135deg,#374151,#1f2937); }
+.pmock__content--auto .pmock__strip       { background: #0d1829; }
+.pmock__content--auto .pmock__chip        { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.08); }
+
+/* Card 3 — Pizzeria (warm amber) */
+.pmock__content--resto { background: #fff; }
+.pmock__content--resto .pmock__nav-logo   { background: #f59e0b; }
+.pmock__content--resto .pmock__nav-cta    { background: #dc2626; }
+.pmock__content--resto .pmock__hero       { background: linear-gradient(135deg,#fef3c7,#fde68a 50%,#fffbeb); }
+.pmock__content--resto .pmock__h1         { background: #7c2d12; }
+.pmock__content--resto .pmock__h2         { background: #92400e; }
+.pmock__content--resto .pmock__p,
+.pmock__content--resto .pmock__p2         { background: #b45309; }
+.pmock__content--resto .pmock__btn        { background: #dc2626; }
+.pmock__content--resto .pmock__hero-img   { background: linear-gradient(135deg,#f59e0b,#d97706); }
+
+/* Card 4 — BudMaster (corporate blue) */
+.pmock__content--corp { background: #f0f7ff; }
+.pmock__content--corp .pmock__nav-logo    { background: #2563eb; }
+.pmock__content--corp .pmock__nav-cta     { background: #2563eb; }
+.pmock__content--corp .pmock__hero        { background: linear-gradient(135deg,#1d4ed8,#2563eb 50%,#3b82f6); }
+.pmock__content--corp .pmock__h1          { background: #fff; }
+.pmock__content--corp .pmock__h2          { background: rgba(255,255,255,.75); }
+.pmock__content--corp .pmock__p,
+.pmock__content--corp .pmock__p2          { background: rgba(255,255,255,.35); }
+.pmock__content--corp .pmock__btn         { background: #fff; }
+.pmock__content--corp .pmock__hero-img    { background: linear-gradient(135deg,#dbeafe,#eff6ff); border: 1px solid rgba(255,255,255,.3); }
+.pmock__content--corp .pmock__strip       { background: #dbeafe; }
+.pmock__content--corp .pmock__chip        { border-color: #bfdbfe; }
+
+/* ══════════════════════════════════════
+   REVIEWS — light gray
+   ══════════════════════════════════════ */
+.reviews { background: #f7f9fc; }
+.reviews .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.reviews .sec-title { color: #0f172a; }
+
+.rev-card {
+  background: #ffffff;
+  border-color: #e8edf5;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.rev-card:hover {
+  background: #fff;
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 24px rgba(37,99,235,.08);
+}
+.rev-card__text          { color: #374151; }
+.rev-card__author strong { color: #0f172a; }
+.rev-card__author span   { color: #64748b; }
+.google-reviews-badge    { border-color: #e2e8f0; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.grb__text               { color: #374151; }
+
+/* ══════════════════════════════════════
+   FAQ — white
+   ══════════════════════════════════════ */
+.faq { background: #ffffff; }
+.faq .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.faq .sec-title { color: #0f172a; }
+
+.faq__list { background: #fff; border-color: #e8edf5; box-shadow: 0 2px 12px rgba(0,0,0,.05); }
+.faq-item { border-bottom-color: #f1f5f9; }
+.faq-item__q { color: #374151; }
+.faq-item__q::after { color: #94a3b8; }
+.faq-item__q:hover { background: #f8fafc; color: #0f172a; }
+.faq-item.open .faq-item__q { color: #2563eb; }
+.faq-item.open .faq-item__q::after { color: #2563eb; }
+.faq-item__a p { color: #64748b; }
+
+/* ══════════════════════════════════════
+   CONTACT — white
+   ══════════════════════════════════════ */
+.contact { background: #ffffff; }
+.contact .sec-tag   { background: rgba(37,99,235,.07); border-color: rgba(37,99,235,.18); color: #2563eb; }
+.contact .sec-title { color: #0f172a; }
+.contact .sec-sub   { color: #64748b; }
+
+.availability-badge {
+  background: rgba(37,99,235,.07);
+  border-color: rgba(37,99,235,.2);
+}
+.availability-badge span:last-child { color: #2563eb; }
+.availability-badge__dot { background: #2563eb; box-shadow: 0 0 8px rgba(37,99,235,.4); }
+
+.c-item__ico     { background: rgba(37,99,235,.08); border-color: rgba(37,99,235,.14); color: #2563eb; }
+.c-item__lbl     { color: #94a3b8; }
+.c-item__val     { color: #0f172a; }
+.c-item__val:hover { color: #2563eb; }
+
+.form-lbl { color: #374151; }
+.form-inp {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+.form-inp::placeholder { color: #94a3b8; }
+.form-inp:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.08);
+  background: #fff;
+}
+
+.trust-item { color: #64748b; }
+.trust-item svg { color: #2563eb; }
+
+.cstep__num   { background: #2563eb !important; color: #fff !important; }
+.cstep__txt   { color: #374151 !important; }
+.cstep__arrow { color: #94a3b8 !important; }
+
+.form-micro { color: #94a3b8; }
+.form-consent__label { color: #64748b; }
+.form-consent__label a { color: #2563eb; }
+.form-error { color: #dc2626; border-color: rgba(220,38,38,.2); background: rgba(220,38,38,.05); }
+
+/* ══════════════════════════════════════
+   RESPONSIVE — mobile adjustments
+   ══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero { padding: calc(var(--header-h) + 36px) 0 56px; }
+  .services, .why, .pricing, .support,
+  .gbp, .portfolio, .reviews, .faq, .contact {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+  .sec-head { margin-bottom: 36px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PHASE 1 — Agency Showcase · Portfolio Mockups · CTA Fix
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Mobile: show hero text + CTA buttons BEFORE visual ── */
+@media (max-width: 768px) {
+  .hero__visual { order: 0; }
+  .hero__sub { margin-bottom: 24px; }
+}
+
+/* ── 2. Hero mockup — beauty salon colour scheme ── */
+.ms-lw__brand-ico { background: linear-gradient(135deg,#ec4899,#be185d); }
+.ms-lw__hero {
+  background: linear-gradient(135deg,#fdf2f8 0%,#fce7f3 60%,#f9a8d4 100%);
+  border-bottom-color: #fbcfe8;
+}
+.ms-lw__h1 span { color: #be185d; }
+.ms-lw__pill  { color: #be185d; background: #fff0f8; box-shadow: 0 1px 3px rgba(190,24,93,.08); }
+.ms-lw__btn   { background: #be185d; }
+.ms-lw__cta   { background: linear-gradient(135deg,#ec4899,#be185d); box-shadow: 0 3px 10px rgba(190,24,93,.35); }
+.ms-lw__hero-shape {
+  background: linear-gradient(145deg,#ec4899 0%,#be185d 50%,#9d174d 100%);
+  box-shadow: 0 8px 20px rgba(190,24,93,.4);
+}
+
+/* ── 3. Contact steps — visible on white background ── */
+.contact .cstep { background: #f8fafc; border-color: #e2e8f0; }
+
+/* ── 4. Portfolio — realistic website screenshot mockups ── */
+
+/* Shared: chips display as centered text labels */
+.pmock__chip {
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-size: 5.5px; font-weight: 600;
+  overflow: hidden; white-space: nowrap;
+}
+
+/* Card 1 — Bella Beauty Studio (rose/pink) */
+.pmock__content--beauty .pmock__h1 {
+  height: auto; background: transparent; color: #0f172a;
+  font-family: var(--font-head); font-size: 9px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 4px; width: auto;
+}
+.pmock__content--beauty .pmock__h1::before { content: 'Salon Bella Beauty'; display: block; }
+.pmock__content--beauty .pmock__h2 {
+  height: auto; background: transparent; color: #9d174d;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 600;
+  margin-bottom: 6px; width: auto;
+}
+.pmock__content--beauty .pmock__h2::before { content: 'Uroda · Manicure · Makijaż'; display: block; }
+.pmock__content--beauty .pmock__btn {
+  height: auto; display: inline-flex; align-items: center;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 700;
+  color: #fff; padding: 4px 10px; width: auto; border-radius: 4px;
+}
+.pmock__content--beauty .pmock__btn::before { content: 'Rezerwuj online →'; }
+.pmock__content--beauty .pmock__strip .pmock__chip:nth-child(1)::before { content: 'Manicure'; color: #be185d; }
+.pmock__content--beauty .pmock__strip .pmock__chip:nth-child(2)::before { content: 'Pedicure'; color: #be185d; }
+.pmock__content--beauty .pmock__strip .pmock__chip:nth-child(3)::before { content: 'Stylizacja'; color: #be185d; }
+
+/* Card 2 — AutoPro Serwis (navy/orange) */
+.pmock__content--auto .pmock__h1 {
+  height: auto; background: transparent; color: #fff;
+  font-family: var(--font-head); font-size: 9px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 4px; width: auto;
+}
+.pmock__content--auto .pmock__h1::before { content: 'AutoPro Serwis'; display: block; }
+.pmock__content--auto .pmock__h2 {
+  height: auto; background: transparent; color: rgba(255,255,255,.65);
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 500;
+  margin-bottom: 6px; width: auto;
+}
+.pmock__content--auto .pmock__h2::before { content: 'Diagnostyka · Naprawy · Serwis'; display: block; }
+.pmock__content--auto .pmock__btn {
+  height: auto; display: inline-flex; align-items: center;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 700;
+  color: #fff; padding: 4px 10px; width: auto; border-radius: 4px;
+}
+.pmock__content--auto .pmock__btn::before { content: 'Zadzwoń teraz →'; }
+.pmock__content--auto .pmock__strip .pmock__chip:nth-child(1)::before { content: 'Diagnostyka'; color: #f97316; }
+.pmock__content--auto .pmock__strip .pmock__chip:nth-child(2)::before { content: 'Naprawy'; color: #f97316; }
+.pmock__content--auto .pmock__strip .pmock__chip:nth-child(3)::before { content: 'Serwis'; color: #f97316; }
+
+/* Card 3 — Pizzeria Napoli (warm amber) */
+.pmock__content--resto .pmock__h1 {
+  height: auto; background: transparent; color: #7c2d12;
+  font-family: var(--font-head); font-size: 9px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 4px; width: auto;
+}
+.pmock__content--resto .pmock__h1::before { content: 'Pizzeria Napoli'; display: block; }
+.pmock__content--resto .pmock__h2 {
+  height: auto; background: transparent; color: #92400e;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 600;
+  margin-bottom: 6px; width: auto;
+}
+.pmock__content--resto .pmock__h2::before { content: 'Autentyczna kuchnia włoska'; display: block; }
+.pmock__content--resto .pmock__btn {
+  height: auto; display: inline-flex; align-items: center;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 700;
+  color: #fff; padding: 4px 10px; width: auto; border-radius: 4px;
+}
+.pmock__content--resto .pmock__btn::before { content: 'Zamów online →'; }
+.pmock__content--resto .pmock__strip .pmock__chip:nth-child(1)::before { content: 'Pizza'; color: #b45309; }
+.pmock__content--resto .pmock__strip .pmock__chip:nth-child(2)::before { content: 'Pasta'; color: #b45309; }
+.pmock__content--resto .pmock__strip .pmock__chip:nth-child(3)::before { content: 'Dowóz'; color: #b45309; }
+
+/* Card 4 — BudMaster Budownictwo (corporate blue) */
+.pmock__content--corp .pmock__h1 {
+  height: auto; background: transparent; color: #fff;
+  font-family: var(--font-head); font-size: 9px; font-weight: 800;
+  line-height: 1.2; margin-bottom: 4px; width: auto;
+}
+.pmock__content--corp .pmock__h1::before { content: 'BudMaster Budownictwo'; display: block; }
+.pmock__content--corp .pmock__h2 {
+  height: auto; background: transparent; color: rgba(255,255,255,.75);
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 500;
+  margin-bottom: 6px; width: auto;
+}
+.pmock__content--corp .pmock__h2::before { content: 'Remonty · Wykończenia'; display: block; }
+.pmock__content--corp .pmock__btn {
+  height: auto; display: inline-flex; align-items: center;
+  font-family: var(--font-head); font-size: 6.5px; font-weight: 700;
+  color: #1e3a5f; padding: 4px 10px; width: auto; border-radius: 4px;
+}
+.pmock__content--corp .pmock__btn::before { content: 'Bezpłatna wycena →'; }
+.pmock__content--corp .pmock__strip .pmock__chip:nth-child(1)::before { content: 'Remonty'; color: #2563eb; }
+.pmock__content--corp .pmock__strip .pmock__chip:nth-child(2)::before { content: 'Wykończenia'; color: #2563eb; }
+.pmock__content--corp .pmock__strip .pmock__chip:nth-child(3)::before { content: 'Instalacje'; color: #2563eb; }
