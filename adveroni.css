@@ -3652,28 +3652,54 @@ body { background: #fff; }
 /* ── Copy-email button ── */
 .c-item__email-row {
   display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
 }
 .email-copy-btn {
   font-family: inherit;
-  font-size: .72rem;
+  font-size: .70rem;
   font-weight: 600;
-  letter-spacing: .02em;
-  padding: 3px 11px;
-  border: 1.5px solid #2563eb;
+  letter-spacing: .03em;
+  padding: 4px 13px;
+  border: 1.5px solid rgba(37,99,235,.45);
   color: #2563eb;
-  background: transparent;
+  background: rgba(37,99,235,.06);
   border-radius: 20px;
   cursor: pointer;
-  transition: background .18s, color .18s;
+  transition: background .18s, color .18s, border-color .18s;
   white-space: nowrap;
   line-height: 1.6;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
-.email-copy-btn:hover { background: #2563eb; color: #fff; }
-.email-copy-btn.copied { border-color: #16a34a; color: #16a34a; }
-.email-copy-btn.copied:hover { background: #16a34a; color: #fff; }
+.email-copy-btn::before {
+  content: '';
+  display: inline-block;
+  width: 12px; height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='13' height='13' rx='2'/%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  transition: opacity .18s;
+}
+.email-copy-btn.copied::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+.email-copy-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+.email-copy-btn:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='13' height='13' rx='2'/%3E%3Cpath d='M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1'/%3E%3C/svg%3E");
+}
+.email-copy-btn.copied { border-color: rgba(22,163,74,.45); color: #16a34a; background: rgba(22,163,74,.06); }
+.email-copy-btn.copied:hover { background: #16a34a; color: #fff; border-color: #16a34a; }
+.email-copy-btn.copied:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
 
 /* ═══════════════════════════════════════════════════════════════
    SECTION RHYTHM — alternating soft-tint backgrounds
