@@ -3346,3 +3346,69 @@ body { background: #fff; }
 .portfolio { border-top: 1px solid #f0f4f8; }
 .faq       { border-top: 1px solid #f0f4f8; }
 .contact   { border-top: 1px solid #f0f4f8; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PHASE 3 — Typography: Sora headings · stronger hierarchy
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Override heading font to Sora ── */
+:root { --font-head: 'Sora', 'Inter', sans-serif; }
+
+/* ── H1: hero title — bolder and sharper ── */
+.hero__title {
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+}
+
+/* ── H2: section titles ── */
+.sec-title {
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+/* ── Logo mark ── */
+.logo {
+  font-weight: 800;
+  letter-spacing: -.05em;
+}
+
+/* ── Buttons: stronger weight ── */
+.btn {
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+/* ── Nav links: slightly tighter ── */
+.nav__link {
+  font-weight: 500;
+  letter-spacing: -.01em;
+}
+
+/* ── Service / price card names ── */
+.svc-card__title,
+.price-card__name,
+.sup-card__name {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+/* ── Section tag pill ── */
+.sec-tag {
+  font-weight: 600;
+  letter-spacing: .06em;
+}
+
+/* ── Why-item headings ── */
+.why-item h3 {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+/* ── Portfolio & review card headings ── */
+.port-card__body h3,
+.rev-card__author strong {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
