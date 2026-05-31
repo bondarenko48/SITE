@@ -6,7 +6,10 @@
       "Bash(git push *)",
       "Bash(ls -la adveroni-favicon-pack/favicon-512.png)",
       "Bash(ls -la favicon-512.png)",
-      "Bash(ls -la favicon88-32.png)"
+      "Bash(ls -la favicon88-32.png)",
+      "Bash(dir \"C:\\\\Users\\\\Vik\\\\Documents\\\\SITE\\\\adveroni-favicon-pack\")",
+      "Bash(dir \"C:\\\\Users\\\\Vik\\\\Documents\\\\SITE\")",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Vik\\\\Documents\\\\SITE\" | Where-Object { $_.Name -match \"^favicon\" } | Select-Object Name, Length | Sort-Object Name)"
     ]
   }
 }
