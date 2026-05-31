@@ -3674,4 +3674,98 @@ body { background: #fff; }
 .email-copy-btn:hover { background: #2563eb; color: #fff; }
 .email-copy-btn.copied { border-color: #16a34a; color: #16a34a; }
 .email-copy-btn.copied:hover { background: #16a34a; color: #fff; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION RHYTHM — alternating soft-tint backgrounds
+   ═══════════════════════════════════════════════════════════════ */
+.why      { background: #f0f7ff; }
+.support  { background: #f5f3ff; }
+.portfolio { background: #fffdf7; }
+.reviews  { background: #f0f7ff; }
+.faq      { background: #f5f3ff; }
+/* GBP stays dark navy — natural contrast break; contact stays white */
+
+/* Keep sec-tag / sec-title readable on tinted backgrounds */
+.why .sec-sub        { color: #64748b; }
+.reviews .sec-sub    { color: #64748b; }
+.faq .faq__list      { background: transparent; box-shadow: none; border: none; }
+.faq-item            { border-bottom: 1px solid #e5e9f2; }
+.faq-item__q:hover   { background: rgba(37,99,235,.04); }
+
+/* ═══════════════════════════════════════════════════════════════
+   PORTFOLIO CARDS — uniform geometry & rounded corners
+   ═══════════════════════════════════════════════════════════════ */
+.port-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  background: #ffffff;
+  box-shadow: 0 2px 14px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.03);
+  transition: box-shadow .3s, transform .3s, border-color .3s;
+}
+.port-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(37,99,235,.11), 0 2px 6px rgba(0,0,0,.04);
+  border-color: #bfdbfe;
+}
+.port-card__img {
+  height: 220px;
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #e8edf5;
+}
+.port-card__img::before { display: none; }
+.port-card__body { padding: 20px 22px; }
+.port-card__body h3 { color: #0f172a; font-size: .95rem; }
+.port-card__body p  { color: #64748b; }
+.port-card__tags span {
+  background: rgba(37,99,235,.07);
+  color: #2563eb;
+  border: 1px solid rgba(37,99,235,.12);
+}
+
+/* Uniform browser bar across all 4 mockups */
+.pmock {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+}
+.pmock__bar {
+  height: 26px;
+  min-height: 26px;
+  background: #1e293b;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+/* Category badge */
+.port-card__cat {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 10;
+  background: rgba(255,255,255,.94);
+  color: #0f172a;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  backdrop-filter: none;
+}
+
+/* Grid gap */
+.portfolio__grid { gap: 20px; }
+
+/* ── Mobile: 390px section rhythm & sticky-CTA clearance ── */
+@media (max-width: 480px) {
+  .portfolio__grid { gap: 14px; }
+  .port-card__img  { height: 198px; }
+  /* extra bottom pad so the sticky CTA bar doesn't cover last content */
+  .contact { padding-bottom: 86px; }
+}
 }
