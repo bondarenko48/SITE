@@ -3648,4 +3648,30 @@ body { background: #fff; }
   .chip { font-size: .75rem; padding: 5px 11px; }
   .stat__num { font-size: 1.5rem; }
   .form-inp { padding: 13px 16px; }
+
+/* ── Copy-email button ── */
+.c-item__email-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.email-copy-btn {
+  font-family: inherit;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: 3px 11px;
+  border: 1.5px solid #2563eb;
+  color: #2563eb;
+  background: transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .18s, color .18s;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+.email-copy-btn:hover { background: #2563eb; color: #fff; }
+.email-copy-btn.copied { border-color: #16a34a; color: #16a34a; }
+.email-copy-btn.copied:hover { background: #16a34a; color: #fff; }
 }
