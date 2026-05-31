@@ -220,41 +220,124 @@
 
         <div class="hero__visual" aria-hidden="true">
           <div class="mockup">
+
+            <!-- ── Browser: real client website preview ── -->
             <div class="mockup__browser">
               <div class="mockup__bar">
                 <span class="mockup__dot"></span>
                 <span class="mockup__dot"></span>
                 <span class="mockup__dot"></span>
-                <div class="mockup__url">adveroni.pl</div>
+                <div class="mockup__url">salon-beauty.pl</div>
               </div>
-              <div class="mockup__screen">
-                <div class="ms-nav"></div>
-                <div class="ms-hero">
-                  <div class="ms-line ms-line--xl"></div>
-                  <div class="ms-line ms-line--lg"></div>
-                  <div class="ms-line ms-line--md"></div>
-                  <div class="ms-btn"></div>
+              <div class="mockup__screen ms-website">
+
+                <!-- Nav -->
+                <div class="ms-web__nav">
+                  <div class="ms-web__brand">
+                    <div class="ms-web__brand-dot"></div>
+                    <span>Bella Beauty</span>
+                  </div>
+                  <div class="ms-web__nav-items">
+                    <span>Usługi</span><span>Cennik</span><span>Kontakt</span>
+                  </div>
+                  <div class="ms-web__nav-cta">Rezerwuj</div>
                 </div>
-                <div class="ms-cards">
-                  <div class="ms-card"></div>
-                  <div class="ms-card"></div>
-                  <div class="ms-card"></div>
+
+                <!-- Hero section -->
+                <div class="ms-web__hero">
+                  <div class="ms-web__hero-content">
+                    <div class="ms-web__pill">★★★★★ Google Top 3</div>
+                    <div class="ms-web__h1">Salon Beauty<br><span class="ms-web__h1-accent">Warszawa</span></div>
+                    <div class="ms-web__sub">Profesjonalne zabiegi urody</div>
+                    <div class="ms-web__cta">Zarezerwuj wizytę →</div>
+                  </div>
+                  <div class="ms-web__hero-glow"></div>
                 </div>
+
+                <!-- Services strip — communicates what Adveroni builds -->
+                <div class="ms-web__services">
+                  <div class="ms-web__svc">
+                    <div class="ms-web__svc-ico ms-web__svc-ico--blue">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="ms-web__svc-name">Strona WWW</div>
+                  </div>
+                  <div class="ms-web__svc">
+                    <div class="ms-web__svc-ico ms-web__svc-ico--green">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="ms-web__svc-name">Google Maps</div>
+                  </div>
+                  <div class="ms-web__svc">
+                    <div class="ms-web__svc-ico ms-web__svc-ico--orange">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="ms-web__svc-name">Google Ads</div>
+                  </div>
+                </div>
+
+                <!-- Results stats -->
+                <div class="ms-web__stats">
+                  <div class="ms-web__stat"><b>★ 4.9</b><small>Google</small></div>
+                  <div class="ms-web__stat-sep"></div>
+                  <div class="ms-web__stat"><b>+230%</b><small>zapytań</small></div>
+                  <div class="ms-web__stat-sep"></div>
+                  <div class="ms-web__stat"><b>#1</b><small>lokalnie</small></div>
+                </div>
+
               </div>
             </div>
+
+            <!-- ── Phone: Google Business Profile / Maps ── -->
             <div class="mockup__phone">
               <div class="mockup__phone-notch"></div>
-              <div class="mockup__phone-screen">
-                <div class="ms-line ms-line--lg"></div>
-                <div class="ms-line ms-line--md"></div>
-                <div class="ms-btn ms-btn--sm"></div>
-                <div class="ms-card ms-card--phone"></div>
-                <div class="ms-card ms-card--phone"></div>
+              <div class="mockup__phone-screen ms-gmaps">
+
+                <!-- Google search bar -->
+                <div class="ms-gm__bar">
+                  <div class="ms-gm__g">G</div>
+                  <div class="ms-gm__search">salon beauty wa…</div>
+                </div>
+
+                <!-- Map preview -->
+                <div class="ms-gm__map">
+                  <div class="ms-gm__road ms-gm__road--h"></div>
+                  <div class="ms-gm__road ms-gm__road--v"></div>
+                  <div class="ms-gm__pin">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 24 28" fill="#EA4335"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 22 12 22S24 21 24 12C24 5.4 18.6 0 12 0zm0 16c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+                    <div class="ms-gm__pin-shadow"></div>
+                  </div>
+                </div>
+
+                <!-- Business card -->
+                <div class="ms-gm__card">
+                  <div class="ms-gm__name">Bella Beauty Studio</div>
+                  <div class="ms-gm__stars">★★★★★ <span>4.9</span></div>
+                  <div class="ms-gm__open">● Otwarte teraz</div>
+                  <div class="ms-gm__actions">
+                    <span>Tel.</span>
+                    <span>Trasa</span>
+                    <span>WWW</span>
+                  </div>
+                </div>
+
               </div>
             </div>
-            <div class="mockup__tag mockup__tag--1"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SEO Ready</div>
-            <div class="mockup__tag mockup__tag--2"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Fast Load</div>
-            <div class="mockup__tag mockup__tag--3"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="2.5"/></svg> Mobile First</div>
+
+            <!-- ── Floating badges ── -->
+            <div class="mockup__tag mockup__tag--1 adv-tag--brand">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              ADVERONI
+            </div>
+            <div class="mockup__tag mockup__tag--2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              +230% zapytań
+            </div>
+            <div class="mockup__tag mockup__tag--3">
+              <div class="adv-tag__g">G</div>
+              Więcej klientów z Google
+            </div>
+
           </div>
         </div>
       </div>

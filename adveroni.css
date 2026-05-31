@@ -1933,3 +1933,352 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .contact-trust { gap: 8px; }
   .trust-item { font-size: .75rem; padding: 6px 12px; }
 }
+
+/* ══════════════════════════════════════
+   HERO VISUAL — Browser: Real Website Preview
+   ══════════════════════════════════════ */
+.mockup__screen.ms-website {
+  padding: 0;
+  overflow: hidden;
+  background: #080c1a;
+}
+
+/* Site navigation */
+.ms-web__nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  background: rgba(8,12,26,.98);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.ms-web__brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-head);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ms-web__brand-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #c084fc;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(192,132,252,.6);
+}
+.ms-web__nav-items {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+.ms-web__nav-items span {
+  font-size: 6.5px;
+  color: rgba(255,255,255,.4);
+  font-family: var(--font-head);
+}
+.ms-web__nav-cta {
+  font-size: 6.5px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  color: #fff;
+  font-family: var(--font-head);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(168,85,247,.3);
+}
+
+/* Hero section of the preview website */
+.ms-web__hero {
+  position: relative;
+  padding: 16px 14px 14px;
+  background: linear-gradient(135deg, #0c0520 0%, #1a0d40 50%, #0d1635 100%);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.ms-web__hero-content { position: relative; z-index: 1; }
+.ms-web__pill {
+  display: inline-block;
+  font-size: 5.5px;
+  font-weight: 700;
+  color: #F59E0B;
+  background: rgba(245,158,11,.1);
+  border: 1px solid rgba(245,158,11,.25);
+  border-radius: 100px;
+  padding: 2px 7px;
+  margin-bottom: 7px;
+  font-family: var(--font-head);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.ms-web__h1 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 5px;
+  font-family: var(--font-head);
+  letter-spacing: -.03em;
+}
+.ms-web__h1-accent {
+  background: linear-gradient(135deg, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ms-web__sub {
+  font-size: 7px;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 10px;
+  font-family: var(--font-head);
+}
+.ms-web__cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 7px;
+  font-weight: 700;
+  padding: 5px 13px;
+  background: linear-gradient(135deg, #c084fc, #a855f7);
+  border-radius: 5px;
+  color: #fff;
+  font-family: var(--font-head);
+  box-shadow: 0 3px 10px rgba(168,85,247,.35);
+}
+.ms-web__hero-glow {
+  position: absolute;
+  top: -20px; right: -30px;
+  width: 140px; height: 140px;
+  background: radial-gradient(circle, rgba(192,132,252,.32) 0%, rgba(99,102,241,.15) 45%, transparent 70%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+/* Services strip — shows what Adveroni builds */
+.ms-web__services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.ms-web__svc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 6px;
+  gap: 5px;
+  border-right: 1px solid rgba(255,255,255,.05);
+  background: rgba(255,255,255,.018);
+}
+.ms-web__svc:last-child { border-right: none; }
+.ms-web__svc-ico {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ms-web__svc-ico--blue  { background: rgba(37,99,235,.15);  color: #60a5fa; border: 1px solid rgba(37,99,235,.2); }
+.ms-web__svc-ico--green { background: rgba(52,168,83,.15);  color: #4ade80; border: 1px solid rgba(52,168,83,.22); }
+.ms-web__svc-ico--orange{ background: rgba(245,158,11,.1);  color: #fbbf24; border: 1px solid rgba(245,158,11,.2); }
+.ms-web__svc-ico svg { display: block; }
+.ms-web__svc-name {
+  font-size: 6px;
+  font-weight: 600;
+  color: rgba(255,255,255,.45);
+  font-family: var(--font-head);
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Stats bar */
+.ms-web__stats {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.018);
+}
+.ms-web__stat { flex: 1; text-align: center; }
+.ms-web__stat b {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -.03em;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+.ms-web__stat small {
+  display: block;
+  font-size: 5.5px;
+  color: rgba(255,255,255,.32);
+  font-family: var(--font-head);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.ms-web__stat-sep {
+  width: 1px; height: 22px;
+  background: rgba(255,255,255,.07);
+}
+
+/* ══════════════════════════════════════
+   HERO VISUAL — Phone: Google Business Profile
+   ══════════════════════════════════════ */
+.mockup__phone-screen.ms-gmaps {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #0a1020;
+}
+
+/* Google search bar */
+.ms-gm__bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  background: #111827;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  flex-shrink: 0;
+}
+.ms-gm__g {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: conic-gradient(#4285F4 0deg 120deg, #34A853 120deg 210deg, #FBBC05 210deg 270deg, #EA4335 270deg 360deg);
+  font-family: var(--font-head);
+  font-size: 7px;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ms-gm__search {
+  flex: 1;
+  font-size: 5.5px;
+  color: rgba(255,255,255,.32);
+  background: rgba(255,255,255,.07);
+  border-radius: 8px;
+  padding: 2px 5px;
+  font-family: var(--font-head);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Map area */
+.ms-gm__map {
+  flex: 1;
+  min-height: 46px;
+  background:
+    linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px),
+    linear-gradient(180deg, #0d1f38 0%, #0a1825 100%);
+  background-size: 10px 10px, 10px 10px, auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ms-gm__road {
+  position: absolute;
+  background: rgba(255,255,255,.1);
+}
+.ms-gm__road--h { top: 50%; left: 0; right: 0; height: 1.5px; transform: translateY(-50%); }
+.ms-gm__road--v { left: 38%; top: 0; bottom: 0; width: 1.5px; }
+.ms-gm__pin {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 2px 4px rgba(234,67,53,.4));
+}
+.ms-gm__pin-shadow {
+  width: 8px; height: 3px;
+  background: rgba(0,0,0,.3);
+  border-radius: 50%;
+  margin-top: -1px;
+  filter: blur(1px);
+}
+
+/* Business info card */
+.ms-gm__card {
+  padding: 6px 6px 8px;
+  background: rgba(15,23,42,.97);
+  border-top: 1px solid rgba(255,255,255,.08);
+  flex-shrink: 0;
+}
+.ms-gm__name {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-head);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -.01em;
+}
+.ms-gm__stars {
+  font-size: 7px;
+  color: #F59E0B;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+.ms-gm__stars span { color: rgba(255,255,255,.32); font-size: 6px; }
+.ms-gm__open {
+  font-size: 6px;
+  color: #4ade80;
+  font-weight: 600;
+  font-family: var(--font-head);
+  margin-bottom: 5px;
+}
+.ms-gm__actions { display: flex; gap: 3px; }
+.ms-gm__actions span {
+  flex: 1;
+  text-align: center;
+  padding: 4px 2px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 4px;
+  font-size: 5.5px;
+  font-weight: 600;
+  color: rgba(96,165,250,.8);
+  font-family: var(--font-head);
+  white-space: nowrap;
+  background: rgba(96,165,250,.06);
+}
+
+/* ══════════════════════════════════════
+   HERO VISUAL — Floating Badge Variants
+   ══════════════════════════════════════ */
+.adv-tag--brand {
+  background: linear-gradient(135deg, rgba(37,99,235,.2), rgba(10,18,40,.96));
+  border-color: rgba(37,99,235,.45);
+  color: var(--accent3);
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-size: .68rem;
+}
+.adv-tag--brand svg { color: var(--accent); }
+
+.adv-tag__g {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: conic-gradient(#4285F4 0deg 120deg, #34A853 120deg 210deg, #FBBC05 210deg 270deg, #EA4335 270deg 360deg);
+  font-family: var(--font-head);
+  font-size: 8px;
+  font-weight: 900;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
