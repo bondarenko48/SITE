@@ -219,6 +219,7 @@
         });
 
         if (res.ok) {
+          if (typeof gtag === 'function') gtag('event', 'contact_form_submit', { event_category: 'form' });
           form.reset();
           window.location.href = 'thank-you.html';
           if (success) {
@@ -368,5 +369,45 @@
   }, { rootMargin: '-40% 0px -55% 0px' });
 
   sections.forEach(s => spyObs.observe(s));
+
+  /* ══════════════════════════════════════
+     GA4 EVENT TRACKING
+     ══════════════════════════════════════ */
+  function fireGA(eventName, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, params || {});
+    }
+  }
+
+  // WhatsApp clicks
+  $$('a[href^="https://wa.me/"]').forEach(el => {
+    el.addEventListener('click', () => fireGA('whatsapp_click', { event_category: 'contact' }));
+  });
+
+  // Phone clicks
+  $$('a[href^="tel:"]').forEach(el => {
+    el.addEventListener('click', () => fireGA('phone_click', { event_category: 'contact' }));
+  });
+
+  // Email mailto clicks
+  $$('a[href^="mailto:"]').forEach(el => {
+    el.addEventListener('click', () => fireGA('email_click', { event_category: 'contact', method: 'mailto' }));
+  });
+
+  // Email copy button
+  const emailCopyBtn = $('#emailCopyBtn');
+  if (emailCopyBtn) {
+    emailCopyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText('hola@adveroni.pl').then(() => {
+        emailCopyBtn.textContent = 'E-mail skopiowany';
+        emailCopyBtn.classList.add('copied');
+        setTimeout(() => {
+          emailCopyBtn.textContent = 'Copy e-mail';
+          emailCopyBtn.classList.remove('copied');
+        }, 2500);
+      }).catch(() => {});
+      fireGA('email_click', { event_category: 'contact', method: 'copy' });
+    });
+  }
 
 })();
