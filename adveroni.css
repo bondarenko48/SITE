@@ -3412,3 +3412,240 @@ body { background: #fff; }
   font-family: var(--font-head);
   font-weight: 700;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PHASE 4 — Full Audit: Typography · Hero · FAQ · Form · Mobile
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Font: Plus Jakarta Sans ── */
+:root { --font-head: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+
+/* ── 2. Hero: stronger visual hierarchy ── */
+.hero__badge {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  padding: 7px 18px;
+  border-radius: 100px;
+}
+.hero__title {
+  font-size: clamp(2.4rem, 5.8vw, 4.1rem);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: 1.06;
+}
+.hero__title em {
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 45%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero__sub {
+  font-size: 1.08rem;
+  line-height: 1.72;
+  opacity: .82;
+}
+.stat__num {
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -.04em;
+}
+.stat__lbl {
+  font-size: .72rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+/* ── 3. Section titles ── */
+.sec-title {
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+}
+
+/* ── 4. FAQ: redesigned accordion ── */
+.faq__list {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.faq-item {
+  position: relative;
+  border-bottom-color: #edf2f7;
+  transition: background .2s;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item.open { background: #f8fbff; }
+.faq-item__q {
+  padding: 20px 24px 20px 28px;
+  font-size: .94rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  gap: 16px;
+  transition: color .2s, background .15s;
+}
+.faq-item__q:hover { background: #f8fafc; }
+.faq-item.open .faq-item__q { color: #1d4ed8; padding-left: 32px; }
+
+/* CSS chevron (no SVG, no font tricks) */
+.faq-item__q::after {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-right: 2.5px solid #94a3b8;
+  border-bottom: 2.5px solid #94a3b8;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform .3s cubic-bezier(.4,0,.2,1), border-color .25s;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+.faq-item.open .faq-item__q::after {
+  transform: rotate(-135deg) translateY(-2px);
+  border-color: #2563eb;
+}
+
+/* Left accent line on open */
+.faq-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: #2563eb;
+  opacity: 0;
+  border-radius: 0 2px 2px 0;
+  transition: opacity .25s;
+}
+.faq-item.open::before { opacity: 1; }
+
+/* Smoother open animation */
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s cubic-bezier(.4,0,.2,1);
+}
+.faq-item.open .faq-item__a { max-height: 600px; }
+.faq-item__a p {
+  padding: 4px 28px 22px 32px;
+  font-size: .9rem;
+  line-height: 1.8;
+}
+
+/* ── 5. Contact form: premium styling ── */
+.form-lbl {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+.form-inp {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  font-size: .92rem;
+  color: #0f172a;
+  transition: border-color .2s, box-shadow .25s, background .15s;
+}
+.form-inp:hover:not(:focus) {
+  border-color: #cbd5e1;
+  background: #fafbfc;
+}
+.form-inp:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+  background: #ffffff;
+}
+.form-inp::placeholder { color: #94a3b8; }
+.form-ta {
+  min-height: 140px;
+  resize: vertical;
+}
+.form-success {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  color: #16a34a;
+  border-radius: 12px;
+}
+.form-error {
+  border-radius: 12px;
+}
+
+/* Checkbox style */
+.form-consent__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+.form-consent__label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+/* Submit button */
+.contact-form .btn--primary {
+  padding: 16px 32px;
+  font-size: .95rem;
+  letter-spacing: .01em;
+  border-radius: 12px;
+}
+
+/* ── 6. Mobile nav: light background ── */
+@media (max-width: 768px) {
+  .nav {
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 8px 32px rgba(0,0,0,.1);
+    backdrop-filter: blur(16px);
+  }
+  .nav__link {
+    color: #374151;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 14px 0;
+    font-size: .95rem;
+  }
+  .nav__link:last-child { border-bottom: none; }
+  .nav__link:hover, .nav__link.active { color: #2563eb; }
+
+  /* Hero responsive typography */
+  .hero__title {
+    font-size: clamp(2rem, 8.5vw, 2.9rem);
+    letter-spacing: -.04em;
+  }
+  .sec-title {
+    font-size: clamp(1.7rem, 5.5vw, 2.4rem);
+  }
+
+  /* Portfolio card numbers smaller on mobile */
+  .port-card__body::before { font-size: 36px; }
+
+  /* FAQ padding adjustment */
+  .faq-item__q { padding: 18px 20px 18px 24px; }
+  .faq-item.open .faq-item__q { padding-left: 28px; }
+  .faq-item__a p { padding: 4px 20px 18px 28px; }
+
+  /* Form: single column on mobile */
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: 1.9rem;
+    letter-spacing: -.03em;
+  }
+  .hero__btns { gap: 10px; }
+  .hero__btns .btn { width: 100%; justify-content: center; }
+  .ticker__row { gap: 8px; }
+  .chip { font-size: .75rem; padding: 5px 11px; }
+  .stat__num { font-size: 1.5rem; }
+  .form-inp { padding: 13px 16px; }
+}
