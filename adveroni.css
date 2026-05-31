@@ -485,23 +485,69 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   background: rgba(255,255,255,.1);
 }
 
-/* ── Hero Mockup ── */
+/* ── Hero Visual ── */
 .hero__visual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 400px;
 }
 .hero__visual::after {
   content: '';
   position: absolute;
-  bottom: 6%; left: 50%;
+  bottom: 0; left: 50%;
   transform: translateX(-50%);
-  width: 300px; height: 80px;
-  background: radial-gradient(ellipse, rgba(37,99,235,.5) 0%, transparent 70%);
-  filter: blur(30px);
+  width: 340px; height: 100px;
+  background: radial-gradient(ellipse, rgba(34,116,255,.45) 0%, transparent 70%);
+  filter: blur(40px);
   z-index: 0;
   pointer-events: none;
+}
+
+/* ── Hero Orb — 3D wireframe animated blob ── */
+.hero-orb {
+  position: relative;
+  width: min(460px, 100%);
+  aspect-ratio: 1;
+  z-index: 1;
+}
+.hero-orb__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-orb__static {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 35%,
+    rgba(0,229,255,.26) 0%,
+    rgba(34,116,255,.20) 28%,
+    rgba(99,102,241,.13) 56%,
+    transparent 78%);
+  box-shadow:
+    0 0 70px rgba(34,116,255,.28),
+    0 0 130px rgba(139,92,246,.13),
+    inset 0 0 40px rgba(0,229,255,.08);
+  display: none;
+}
+.hero-orb__static::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  border: 1px solid rgba(0,229,255,.25);
+  box-shadow: 0 0 20px rgba(0,229,255,.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb__canvas { display: none; }
+  .hero-orb__static { display: block; }
+}
+@media (max-width: 768px) {
+  .hero-orb { width: min(300px, 82vw); }
+  .hero__visual { min-height: 260px; }
 }
 .mockup {
   position: relative;

@@ -371,6 +371,189 @@
   sections.forEach(s => spyObs.observe(s));
 
   /* ══════════════════════════════════════
+     HERO ORB — 3D wireframe animated blob
+     ══════════════════════════════════════ */
+  const blobCanvas = document.getElementById('heroBlobCanvas');
+  if (blobCanvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const bctx = blobCanvas.getContext('2d');
+    let bW, bH, bCx, bCy, bR, bT0 = 0, bVisible = true;
+
+    function bResize() {
+      const p = blobCanvas.parentElement;
+      bW = blobCanvas.width  = p.offsetWidth  || 460;
+      bH = blobCanvas.height = p.offsetHeight || 460;
+      bCx = bW * .5;
+      bCy = bH * .5;
+      bR  = Math.min(bW, bH) * .36;
+    }
+    bResize();
+    window.addEventListener('resize', bResize, { passive: true });
+    new IntersectionObserver(e => { bVisible = e[0].isIntersecting; }, { threshold: 0 })
+      .observe(blobCanvas);
+
+    const bCosTX = Math.cos(.26), bSinTX = Math.sin(.26);
+
+    function blobDeform(phi, theta, t) {
+      return bR * (1
+        + .055 * Math.sin(2 * phi  + .65 * t)
+        + .040 * Math.sin(3 * theta - .50 * t)
+        + .030 * Math.cos(2 * theta + phi + .42 * t)
+        + .022 * Math.sin(phi - 2 * theta + .28 * t)
+      );
+    }
+
+    function bProj(phi, theta, t) {
+      const r  = blobDeform(phi, theta, t);
+      const ry = .20 * t;
+      const cY = Math.cos(ry), sY = Math.sin(ry);
+      const sx = r * Math.sin(phi) * Math.cos(theta);
+      const sy = r * Math.cos(phi);
+      const sz = r * Math.sin(phi) * Math.sin(theta);
+      const x1 =  sx * cY + sz * sY;
+      const z1 = -sx * sY + sz * cY;
+      const y2 = sy * bCosTX - z1 * bSinTX;
+      const z2 = sy * bSinTX + z1 * bCosTX;
+      return [bCx + x1, bCy - y2, z2];
+    }
+
+    const bLATS = 7, bLONS = 10, bSTEPS = 36, bBINS = 6;
+
+    function bDraw(ts) {
+      if (!bT0) bT0 = ts;
+      const t = (ts - bT0) * .001;
+
+      bctx.clearRect(0, 0, bW, bH);
+
+      // Outer violet atmosphere
+      const g1 = bctx.createRadialGradient(bCx, bCy, bR * .1, bCx, bCy, bR * 1.8);
+      g1.addColorStop(0,   'rgba(139,92,246,.06)');
+      g1.addColorStop(.55, 'rgba(99,102,241,.03)');
+      g1.addColorStop(1,   'rgba(139,92,246,0)');
+      bctx.fillStyle = g1; bctx.fillRect(0, 0, bW, bH);
+
+      // Mid blue glow
+      const g2 = bctx.createRadialGradient(bCx, bCy, 0, bCx, bCy, bR * 1.25);
+      g2.addColorStop(0,   'rgba(34,116,255,.20)');
+      g2.addColorStop(.5,  'rgba(34,116,255,.06)');
+      g2.addColorStop(1,   'rgba(34,116,255,0)');
+      bctx.fillStyle = g2; bctx.fillRect(0, 0, bW, bH);
+
+      // Pulsing inner cyan
+      const pulse = .10 + .04 * Math.sin(t * 1.1);
+      const g3 = bctx.createRadialGradient(bCx, bCy, 0, bCx, bCy, bR * .58);
+      g3.addColorStop(0,  `rgba(0,229,255,${pulse + .12})`);
+      g3.addColorStop(.5, `rgba(0,229,255,${pulse})`);
+      g3.addColorStop(1,  'rgba(0,229,255,0)');
+      bctx.fillStyle = g3; bctx.fillRect(0, 0, bW, bH);
+
+      // Build wire segments into depth bins (back→front)
+      const bins = Array.from({length: bBINS}, () => []);
+
+      function bSeg(p1, p2) {
+        const dz = (p1[2] + p2[2]) * .5;
+        const d  = Math.max(0, Math.min(.999, (dz + bR) / (2 * bR)));
+        bins[Math.floor(d * bBINS)].push(p1[0], p1[1], p2[0], p2[1]);
+      }
+
+      // Latitude circles
+      for (let li = 1; li < bLATS; li++) {
+        const phi = (li / bLATS) * Math.PI;
+        let prev = bProj(phi, 0, t);
+        for (let si = 1; si <= bSTEPS; si++) {
+          const cur = bProj(phi, (si / bSTEPS) * Math.PI * 2, t);
+          bSeg(prev, cur); prev = cur;
+        }
+      }
+      // Longitude arcs
+      for (let li = 0; li < bLONS; li++) {
+        const theta = (li / bLONS) * Math.PI * 2;
+        let prev = bProj(0, theta, t);
+        for (let si = 1; si <= bSTEPS; si++) {
+          const cur = bProj((si / bSTEPS) * Math.PI, theta, t);
+          bSeg(prev, cur); prev = cur;
+        }
+      }
+
+      // Draw bins — colour: indigo (back) → cyan (front)
+      for (let bi = 0; bi < bBINS; bi++) {
+        const segs = bins[bi];
+        if (!segs.length) continue;
+        const d = (bi + .5) / bBINS;
+        const cR = Math.round(99  * (1 - d));
+        const cG = Math.round(102 + 127 * d);
+        const cB = Math.round(241 + 14  * d);
+        bctx.strokeStyle = `rgba(${cR},${cG},${cB},${.06 + d * .70})`;
+        bctx.lineWidth   = .45 + d * .75;
+        bctx.beginPath();
+        for (let i = 0; i < segs.length; i += 4) {
+          bctx.moveTo(segs[i], segs[i + 1]);
+          bctx.lineTo(segs[i + 2], segs[i + 3]);
+        }
+        bctx.stroke();
+      }
+
+      // Bright equator ring
+      const eqA = .30 + .09 * Math.sin(t * .85);
+      bctx.strokeStyle = `rgba(0,229,255,${eqA})`;
+      bctx.lineWidth = 1.1;
+      bctx.beginPath();
+      let ep = bProj(Math.PI * .5, 0, t);
+      bctx.moveTo(ep[0], ep[1]);
+      for (let es = 1; es <= bSTEPS * 2; es++) {
+        const ep2 = bProj(Math.PI * .5, (es / (bSTEPS * 2)) * Math.PI * 2, t);
+        bctx.lineTo(ep2[0], ep2[1]);
+      }
+      bctx.stroke();
+
+      // Cyan orbital particles (inner ring)
+      for (let pi = 0; pi < 18; pi++) {
+        const a   = (pi / 18) * Math.PI * 2 + t * .32;
+        const orb = bR * (1.07 + .13 * Math.sin(pi * 1.41 + t * .44));
+        bctx.beginPath();
+        bctx.arc(
+          bCx + orb * Math.cos(a),
+          bCy + orb * Math.sin(a) * .58,
+          .7 + .5 * Math.sin(pi * 2.15 + t * .65),
+          0, 6.283
+        );
+        bctx.fillStyle = `rgba(0,229,255,${.28 + .18 * Math.sin(pi * 1.83 + t * .5)})`;
+        bctx.fill();
+      }
+
+      // Violet particles (outer ring, counter-rotating)
+      for (let vi = 0; vi < 7; vi++) {
+        const a   = (vi / 7) * Math.PI * 2 - t * .18;
+        const orb = bR * (1.28 + .09 * Math.sin(vi * 2.3 + t * .3));
+        bctx.beginPath();
+        bctx.arc(
+          bCx + orb * Math.cos(a),
+          bCy + orb * Math.sin(a) * .60,
+          1.1 + .45 * Math.sin(vi * 1.6 + t * .5),
+          0, 6.283
+        );
+        bctx.fillStyle = `rgba(139,92,246,${.20 + .12 * Math.sin(vi * 1.9 + t * .4)})`;
+        bctx.fill();
+      }
+
+      // Core glow
+      const cA = .18 + .06 * Math.sin(t * 1.4);
+      const gc = bctx.createRadialGradient(bCx, bCy, 0, bCx, bCy, bR * .32);
+      gc.addColorStop(0,   `rgba(210,235,255,${cA + .18})`);
+      gc.addColorStop(.35, `rgba(96,165,250,${cA})`);
+      gc.addColorStop(1,   'rgba(34,116,255,0)');
+      bctx.fillStyle = gc;
+      bctx.beginPath(); bctx.arc(bCx, bCy, bR * .32, 0, 6.283); bctx.fill();
+    }
+
+    function bTick(ts) {
+      requestAnimationFrame(bTick);
+      if (!bVisible) return;
+      bDraw(ts);
+    }
+    requestAnimationFrame(bTick);
+  }
+
+  /* ══════════════════════════════════════
      GA4 EVENT TRACKING
      ══════════════════════════════════════ */
   function fireGA(eventName, params) {
