@@ -581,7 +581,7 @@
   const emailCopyBtn = $('#emailCopyBtn');
   if (emailCopyBtn) {
     emailCopyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('contact@adveroni.pl').then(() => {
+      navigator.clipboard.writeText('kontakt@adveroni.pl').then(() => {
         emailCopyBtn.textContent = 'E-mail skopiowany';
         emailCopyBtn.classList.add('copied');
         setTimeout(() => {
