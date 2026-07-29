@@ -3948,3 +3948,29 @@ body { background: #fff; }
   .pricing__grid--4 .price-card--feat { transform: none; }
   .pricing__grid--4 .price-card--feat:hover { transform: translateY(-4px); }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PORTFOLIO — real project screenshot + fully clickable card
+   ═══════════════════════════════════════════════════════════════ */
+/* Whole-card link: inherits card geometry, no visual change.
+   height:100% keeps the whole grid-stretched card clickable. */
+.port-card__link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Real screenshot filling the browser mockup below the title bar.
+   Rounded corners come from .port-card overflow:hidden. */
+.pmock__shot {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* CTA reacts to hover anywhere on the card */
+.port-card__link:hover .svc-card__link { color: #1d4ed8; }
