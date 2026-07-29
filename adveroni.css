@@ -3848,3 +3848,103 @@ body { background: #fff; }
   /* extra bottom pad so the sticky CTA bar doesn't cover last content */
   .contact { padding-bottom: 86px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   PRICING — 4-package layout (START / STANDARD / BUSINESS / PREMIUM)
+   Placed last so it wins over the earlier light-theme overrides.
+   ═══════════════════════════════════════════════════════════════ */
+.pricing__grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Equal-height cards with bottom-aligned CTA buttons */
+.pricing__grid--4 .price-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px 24px;
+}
+.pricing__grid--4 .price-card > .btn { margin-top: auto; }
+
+/* Tighter rhythm so four columns stay readable */
+.pricing__grid--4 .price-card__head { margin-bottom: 22px; }
+.pricing__grid--4 .price-card__amt  { font-size: 2.3rem; }
+.pricing__grid--4 .price-card__desc { font-size: .82rem; }
+.pricing__grid--4 .price-card__list { gap: 9px; margin-bottom: 20px; }
+.pricing__grid--4 .price-card__list li { font-size: .83rem; padding-left: 20px; }
+
+/* Badges must stay on a single line in the narrow 4-column cards */
+.pricing__grid--4 .price-card__badge {
+  white-space: nowrap;
+  font-size: .6rem;
+  letter-spacing: .05em;
+  padding: 5px 12px;
+}
+
+/* START card — quieter "good for a start" label */
+.price-card__badge--start {
+  background: rgba(37,99,235,.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(37,99,235,.3);
+  box-shadow: none;
+}
+
+/* In-card notes (positive framing, kept above the CTA) */
+.price-card__note {
+  font-size: .78rem;
+  line-height: 1.55;
+  color: #475569;
+  background: rgba(37,99,235,.05);
+  border: 1px solid rgba(37,99,235,.14);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.price-card__micro {
+  font-size: .73rem;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+/* Promotional line above the cards — brand blue, no urgency animation */
+.pricing-promo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,99,235,.07);
+  border: 1px solid rgba(37,99,235,.2);
+  border-radius: 100px;
+  padding: 6px 18px;
+  margin-bottom: 18px;
+  font-family: var(--font-head);
+  font-size: .79rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+.pricing-promo__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  flex-shrink: 0;
+}
+
+/* ── Responsive: 4 → 2 → 1 columns ── */
+@media (max-width: 1180px) {
+  .pricing__grid--4 { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .pricing__grid--4 .price-card { padding: 34px 28px; }
+  .pricing__grid--4 .price-card__amt { font-size: 2.6rem; }
+  /* wider cards — restore the site's default badge scale */
+  .pricing__grid--4 .price-card__badge {
+    font-size: .68rem;
+    letter-spacing: .1em;
+    padding: 5px 16px;
+  }
+}
+@media (max-width: 768px) {
+  .pricing__grid--4 { grid-template-columns: 1fr; gap: 18px; }
+  .pricing__grid--4 .price-card--feat { transform: none; }
+  .pricing__grid--4 .price-card--feat:hover { transform: translateY(-4px); }
+}
